@@ -1,6 +1,5 @@
 import { useRef } from "react";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { flex } from "../../classes";
 import Container from "../../components/Container";
 
@@ -41,9 +40,9 @@ const news = [
 export default function NewsPart() {
   const swiperRef = useRef();
   return (
-    <>
+    <div className="bg-white">
       <Container>
-        <div className="my-24">
+        <div className="py-4">
           <div className={`${flex.alignCenter} justify-between mb-6`}>
             <h1 className="text-[36px] font-semibold ">So'nggi yangiliklar</h1>
             <div>
@@ -109,6 +108,6 @@ export default function NewsPart() {
           </div>
         </div>
       </Container>
-    </>
+    </div>
   );
 }
