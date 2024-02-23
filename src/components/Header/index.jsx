@@ -37,12 +37,12 @@ const siteLangs = ["UZ", "RU", "EN"];
 
 export default function Header() {
   return (
-    <div className="sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-20">
+    <div className="sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-20 shadow-2xl">
       <Container className="">
         <div className={`${flex.alignCenter} justify-between  `}>
           <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
-            <Logo />
-            <div className="ml-2">
+            <Logo className="w-[80px] h-[96px]" />
+            <div className="ml-3">
               <h1 className="text-xl uppercase mb-1 font-medium text-white">
                 Afrosiyob Express
               </h1>

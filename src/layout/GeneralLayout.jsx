@@ -4,6 +4,7 @@ import bg_img from "../assets/images/afrosiyob123.jpg";
 import vid1 from "../assets/videos/vid3.mp4";
 import { flex } from "../classes";
 import Container from "../components/Container";
+import Footer from "../components/Footer";
 
 export default function GeneralLayout() {
   return (
@@ -21,8 +22,9 @@ export default function GeneralLayout() {
             </Container>
           </div>
         </div>
+        <Outlet />
+        <Footer />
       </div>
-      <Outlet />
     </>
   );
 }
