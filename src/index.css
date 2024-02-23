@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: baseFont;
+  src: url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+html {
+  font-family: baseFont, sans-serif;
+}
+
+.header-gradient {
+  background: linear-gradient(-120deg, #021b79, #0575e6, #021b79);
+}
