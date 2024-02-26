@@ -201,7 +201,7 @@ export default function Footer() {
   return (
     <div className="">
       <Container>
-        <div className={`grid grid-cols-12 gap-4 py-10`}>
+        <div className={`grid grid-cols-12 gap-24 py-10`}>
           <div className="col-span-3 flex flex-col">
             <div className={`${flex.alignCenter}`}>
               <Logo className="w-[83px] h-[96px]" />
