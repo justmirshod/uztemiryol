@@ -45,19 +45,24 @@ export default function NewsPart() {
         <div className="py-4">
           <div className={`${flex.alignCenter} justify-between mb-6`}>
             <h1 className="text-[36px] font-semibold ">So'nggi yangiliklar</h1>
-            <div>
-              <img
-                src={prev_icon}
-                className="w-10 h-10 inline-block mr-4"
-                alt=""
-                onClick={() => swiperRef.current.slidePrev()}
-              />
-              <img
-                src={next_icon}
-                className="w-10 h-10 inline-block"
-                alt=""
-                onClick={() => swiperRef.current.slideNext()}
-              />
+            <div className={`${flex.alignCenter}`}>
+              <div>
+                <img
+                  src={prev_icon}
+                  className="w-10 h-10 inline-block mr-4"
+                  alt=""
+                  onClick={() => swiperRef.current.slidePrev()}
+                />
+                <img
+                  src={next_icon}
+                  className="w-10 h-10 inline-block"
+                  alt=""
+                  onClick={() => swiperRef.current.slideNext()}
+                />
+              </div>
+              <button className="border px-6 py-2 rounded-md hover:bg-blue-600 duration-100 text-blue-700 hover:text-white border-blue-700 mx-4">
+                Barcha yangiliklar
+              </button>
             </div>
           </div>
           <Swiper
@@ -101,11 +106,6 @@ export default function NewsPart() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex justify-end">
-            <button className="border px-6 py-2 rounded-md bg-blue-700 hover:bg-blue-600 duration-100 text-white ml-auto">
-              Barchasi
-            </button>
-          </div>
         </div>
       </Container>
     </div>
