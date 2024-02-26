@@ -7,6 +7,7 @@ import DevelopmentStrategy from "../pages/DevelopmentStrategy";
 import History from "../pages/History";
 import Statistics from "../pages/Statistics";
 import Vacancies from "../pages/Vacancies";
+import Contacts from "../pages/Contacts";
 
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
@@ -21,6 +22,7 @@ export default function Router() {
         <Route path="history" element={<History />} />
         <Route path="statistics" element={<Statistics />} />
         <Route path="vacancies" element={<Vacancies />} />
+        <Route path="communications" element={<Contacts />} />
       </Route>
     </Routes>
   );
