@@ -48,7 +48,8 @@ export default function ContactsView() {
               {item.title} : {item.detail}
             </div>
           ))}
-        </div>
+        </div>{" "}
+        +998 (99) 211-35-26
         <h1 className="text-center text-[#336699] text-2xl mb-10 mt-20">
           "O'ztemiryo'lyo'lovchi" AJ rahbariyatining qabul kunlari
         </h1>
@@ -75,9 +76,16 @@ export default function ContactsView() {
             +998 (99) 211-35-26
           </span>
         </p>
-        <div className="grid grid-cols-2 border">
+        <div className="grid grid-cols-2 border p-10 bg-white shadow-custom1">
           <div className="">
-            <h1>Bizga murojaat jo'nating</h1>
+            <h1 className="text-xl font-normal">Bizga murojaat jo'nating</h1>
+            <form action="" className="mt-6">
+              <label htmlFor="name">F.I.SH</label>
+              <input
+                type="text"
+                className="block border p-3 rounded-lg w-[400px]"
+              />
+            </form>
           </div>
         </div>
       </Container>

@@ -199,15 +199,17 @@ export default function Footer() {
   };
 
   return (
-    <div className="">
+    <div className="bg-[#21262C]">
       <Container>
-        <div className={`grid grid-cols-12 gap-24 py-10`}>
+        <div className={`grid grid-cols-12 gap-24 py-20`}>
           <div className="col-span-3 flex flex-col">
             <div className={`${flex.alignCenter}`}>
               <Logo className="w-[83px] h-[96px]" />
-              <h1 className="text-xl font-semibold ml-2">
+              <h1 className="text-xl font-semibold ml-2 text-white">
                 O'ztemiryo'lyo'lovchi{" "}
-                <p className="font-normal text-base">Aksiyadorlik jamiyati</p>
+                <p className="font-medium text-base text-white">
+                  Aksiyadorlik jamiyati
+                </p>
               </h1>
             </div>
             <div className="mt-32">
@@ -217,7 +219,9 @@ export default function Footer() {
                 alt=""
                 className="inline-block mr-2"
               />
-              <span>Toshkent, Amir Temur 16. 190-uy</span>
+              <span className="text-white">
+                Toshkent, Amir Temur 16. 190-uy
+              </span>
             </div>
             <div className="mt-6">
               <img
@@ -226,7 +230,7 @@ export default function Footer() {
                 alt=""
                 className="inline-block mr-2"
               />
-              <span>+998 (99) 211-35-16</span>
+              <span className="text-white">+998 (99) 211-35-16</span>
             </div>
             <div className="mt-6">
               <img
@@ -235,7 +239,7 @@ export default function Footer() {
                 alt=""
                 className="inline-block mr-2"
               />
-              <span>express@info.uz</span>
+              <span className="text-white">express@info.uz</span>
             </div>
             <div className={`${flex.alignCenter} mt-5`}>
               <img src={instagram_icon} className="w-8 h-8 mr-3" alt="" />
@@ -246,13 +250,15 @@ export default function Footer() {
           </div>
           <div className="col-span-3 flex flex-col">
             <div>
-              <p className="text-lg font-semibold mb-3">Biz haqimizda</p>
+              <p className="text-lg font-semibold mb-3 text-white">
+                Biz haqimizda
+              </p>
               {renderSubRoutesOfMainRoute("Biz haqimizda")?.map(
                 (route, index) => (
                   <Link
                     to={route?.link}
                     key={index}
-                    className="block mb-2 hover:text-blue-700 duration-100"
+                    className="block mb-2 hover:text-blue-700 duration-100 text-white"
                   >
                     {route?.name}
                   </Link>
@@ -260,12 +266,12 @@ export default function Footer() {
               )}
             </div>
             <div className="mt-4">
-              <p className="text-lg font-semibold mb-3">Jadval</p>
+              <p className="text-lg font-semibold mb-3 text-white">Jadval</p>
               {renderSubRoutesOfMainRoute("Jadval")?.map((item, index) => (
                 <Link
                   to={item?.link}
                   key={index}
-                  className="block mb-2 hover:text-blue-700"
+                  className="block mb-2 hover:text-blue-700 text-white"
                 >
                   {item?.name}
                 </Link>
@@ -274,13 +280,15 @@ export default function Footer() {
           </div>
           <div className="col-span-3 flex flex-col">
             <div>
-              <p className="text-lg font-semibold mb-3">Matbuot markazi</p>
+              <p className="text-lg font-semibold mb-3 text-white">
+                Matbuot markazi
+              </p>
               {renderSubRoutesOfMainRoute("Matbuot markazi")?.map(
                 (item, index) => (
                   <Link
                     to={item?.link}
                     key={index}
-                    className="block mb-2 hover:text-blue-700"
+                    className="block mb-2 hover:text-blue-700 text-white"
                   >
                     {item?.name}
                   </Link>
@@ -288,13 +296,15 @@ export default function Footer() {
               )}
             </div>
             <div className="mt-4">
-              <p className="text-lg font-semibold mb-3">Korporativ boshqaruv</p>
+              <p className="text-lg font-semibold mb-3 text-white">
+                Korporativ boshqaruv
+              </p>
               {renderSubRoutesOfMainRoute("Korporativ boshqaruv")?.map(
                 (item, index) => (
                   <Link
                     to={item?.link}
                     key={index}
-                    className="block mb-2 hover:text-blue-700"
+                    className="block mb-2 hover:text-blue-700 text-white"
                   >
                     {item?.name}
                   </Link>
@@ -304,38 +314,38 @@ export default function Footer() {
           </div>
           <div className="col-span-3 flex flex-col">
             <div>
-              <p className="text-lg font-semibold mb-3">Xizmatlar</p>
+              <p className="text-lg font-semibold mb-3 text-white">Xizmatlar</p>
               {renderSubRoutesOfMainRoute("Xizmatlar")?.map((item, index) => (
                 <Link
                   to={item?.link}
                   key={index}
-                  className="block mb-2 hover:text-blue-700"
+                  className="block mb-2 hover:text-blue-700 text-white"
                 >
                   {item?.name}
                 </Link>
               ))}
             </div>
             <div className="mt-4">
-              <p className="text-lg font-semibold mb-3">Qonunlar</p>
+              <p className="text-lg font-semibold mb-3 text-white">Qonunlar</p>
               {renderSubRoutesOfMainRoute("Qonunlar")?.map((item, index) => (
                 <Link
                   to={item?.link}
                   key={index}
-                  className="block mb-2 hover:text-blue-700"
+                  className="block mb-2 hover:text-blue-700 text-white"
                 >
                   {item?.name}
                 </Link>
               ))}
             </div>
             <div className="mt-4">
-              <p className="text-lg font-semibold mb-3 hover:text-blue-700 cursor-pointer">
+              <p className="text-lg font-semibold mb-3 hover:text-blue-700 cursor-pointer text-white">
                 Xarita
               </p>
               {renderSubRoutesOfMainRoute("Xarita")?.map((item, index) => (
                 <Link
                   to={item?.link}
                   key={index}
-                  className="block mb-2 hover:text-blue-700"
+                  className="block mb-2 hover:text-blue-700 text-white"
                 >
                   {item?.name}
                 </Link>
@@ -345,7 +355,7 @@ export default function Footer() {
               <Link
                 to="https://eticket.railway.uz"
                 target="_blank"
-                className="text-lg font-semibold mb-3 hover:text-blue-700 cursor-pointer"
+                className="text-lg font-semibold mb-3 hover:text-blue-700 cursor-pointer text-white"
               >
                 Chipta sotish
               </Link>
@@ -353,7 +363,7 @@ export default function Footer() {
                 <Link
                   to={item?.link}
                   key={index}
-                  className="block mb-2 hover:text-blue-700"
+                  className="block mb-2 hover:text-blue-700 text-white"
                 >
                   {item?.name}
                 </Link>
