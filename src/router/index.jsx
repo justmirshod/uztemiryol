@@ -14,6 +14,9 @@ import CitizenAppeal from "../pages/CitizenAppeal";
 import OnlineReception from "../pages/OnlineReception";
 import Schedules from "../pages/Schedules";
 import TrainsService from "../pages/TrainsService";
+import TicketBuyInstruction from "../pages/TicketBuyInstruction";
+import RefundBoughtTicket from "../pages/RefundBoughtTicket";
+import AdService from "../pages/AdService";
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
 
@@ -35,6 +38,9 @@ export default function Router() {
         </Route>
         <Route path="schedule" element={<Schedules />} />
         <Route path="trains" element={<TrainsService />} />
+        <Route path="ad_services" element={<AdService />} />
+        <Route path="ticket_buy_instruction" element={<TicketBuyInstruction />} />
+        <Route path="ticket_return_instruction" element={<RefundBoughtTicket />} />
       </Route>
     </Routes>
   );

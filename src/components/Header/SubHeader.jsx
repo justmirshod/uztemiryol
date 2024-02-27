@@ -109,7 +109,7 @@ const siteRoutes = [
       },
       {
         name: "Davlat xizmatlari",
-        link: `/${activeLang}/public_services`,
+        link: `https://my.gov.uz`,
       },
       {
         name: " Elektron chiptani qanday harid qilish mumkin?",
