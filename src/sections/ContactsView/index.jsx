@@ -1,5 +1,6 @@
 import { flex } from "../../classes";
 import Container from "../../components/Container";
+import GeneralMap from "../../components/Map";
 
 const contactDetails = [
   {
@@ -49,7 +50,6 @@ export default function ContactsView() {
             </div>
           ))}
         </div>{" "}
-        +998 (99) 211-35-26
         <h1 className="text-center text-[#336699] text-2xl mb-10 mt-20">
           "O'ztemiryo'lyo'lovchi" AJ rahbariyatining qabul kunlari
         </h1>
@@ -76,16 +76,45 @@ export default function ContactsView() {
             +998 (99) 211-35-26
           </span>
         </p>
-        <div className="grid grid-cols-2 border p-10 bg-white shadow-custom1">
-          <div className="">
-            <h1 className="text-xl font-normal">Bizga murojaat jo'nating</h1>
+        <div className="grid grid-cols-3 p-10 bg-white shadow-custom1 rounded-xl mt-10 gap-24">
+          <div className="col-span-1">
+            <h1 className="text-2xl font-normal">Bizga murojaat jo'nating</h1>
             <form action="" className="mt-6">
-              <label htmlFor="name">F.I.SH</label>
-              <input
-                type="text"
-                className="block border p-3 rounded-lg w-[400px]"
-              />
+              <div className="mb-8">
+                <label htmlFor="name" className="block mb-2 text-lg">
+                  F.I.SH
+                </label>
+                <input
+                  type="text"
+                  className="block border p-3 rounded-lg w-full"
+                />
+              </div>
+              <div className="mb-8">
+                <label htmlFor="email" className="block mb-2 text-lg">
+                  Telefon raqamingiz
+                </label>
+                <input
+                  type="number"
+                  className="block border p-3 rounded-lg w-full"
+                />
+              </div>
+              <div className="mb-8">
+                <label htmlFor="email" className="block mb-2 text-lg">
+                  Murojaatingiz
+                </label>
+                <textarea
+                  type="email"
+                  rows={10}
+                  className="block border p-3 rounded-lg w-full"
+                />
+              </div>
+              <button className="px-10 py-2 rounded-lg bg-blue-700 hover:bg-blue-500 text-white uppercase duration-150">
+                Yuborish
+              </button>
             </form>
+          </div>
+          <div className="col-span-2">
+            <GeneralMap />
           </div>
         </div>
       </Container>
