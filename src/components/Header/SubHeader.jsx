@@ -113,11 +113,11 @@ const siteRoutes = [
       },
       {
         name: " Elektron chiptani qanday harid qilish mumkin?",
-        link: `/${activeLang}/ticket_buy_instruction`,
+        link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-buy`,  
       },
       {
         name: "Elektron chiptani qanday qaytarish kerak?",
-        link: `/${activeLang}/ticket_return_instruction`,
+        link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-return`,
       },
     ],
   },
