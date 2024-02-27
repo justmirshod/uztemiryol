@@ -12,6 +12,8 @@ import Vacancies from "../pages/Vacancies";
 import Contacts from "../pages/Contacts";
 import CitizenAppeal from "../pages/CitizenAppeal";
 import OnlineReception from "../pages/OnlineReception";
+import Schedules from "../pages/Schedules";
+import TrainsService from "../pages/TrainsService";
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
 
@@ -31,6 +33,8 @@ export default function Router() {
         <Route element={<MediaSubLayout />}>
           <Route path="news" element={<News />} />
         </Route>
+        <Route path="schedule" element={<Schedules />} />
+        <Route path="trains" element={<TrainsService />} />
       </Route>
     </Routes>
   );

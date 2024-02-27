@@ -39,10 +39,10 @@ export default function Header() {
   return (
     <div
       id="main-header"
-      className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-20 shadow-2xl"
+      className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-[1200] shadow-2xl"
     >
 
-      <Container className="">
+      <Container className="">  
         <div className={`${flex.alignCenter} justify-between  `}>
           <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
             <Logo className="w-[80px] h-[96px]" />

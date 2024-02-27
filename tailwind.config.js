@@ -7,7 +7,8 @@ export default {
         "black-opacity": "#10223e",
       },
       boxShadow: {
-        custom1: "0 4px 20px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
+        custom1: "0 4px 20px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        cardShadow: "11px 10px 38px rgba(0, 0, 0, 0.1)",
       }
     },
     container: {
@@ -20,9 +21,6 @@ export default {
         "2xl": "1536px",
         "3xl": "1900px",
       },
-    },
-    boxShadow: {
-      cardShadow: "11px 10px 38px rgba(0, 0, 0, 0.1)",
     },
   },
   plugins: [],
