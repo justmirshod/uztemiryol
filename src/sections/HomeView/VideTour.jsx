@@ -13,29 +13,31 @@ function VideTour() {
     setIsOpen(false);
   };
   return (
-    <Container>
-      <div className="flex h-[400px] w-1/2 m-auto items-center justify-between text-[30px]">
-        <p>Tashkilot bo'ylab</p>
-        <div>
-          <i
-            onClick={openVideoPopup}
-            className="fa-solid fa-circle-play text-[80px] text-[#022282] cursor-pointer"
-          ></i>
-          <>
-            {isOpen ? (
-              <YouTubePopUp
-                videoId="7o3K-f6vR2A"
-                isOpen={isOpen}
-                onClose={closeVideoPopup}
-              />
-            ) : (
-              ""
-            )}
-          </>
+    <div className="bg-gray-500/80">
+      <Container>
+        <div className="flex h-[400px] w-1/2 m-auto items-center justify-between text-[30px]">
+          <p className="text-white">Tashkilot bo'ylab</p>
+          <div>
+            <i
+              onClick={openVideoPopup}
+              className="fa-solid fa-circle-play text-[80px] text-[#022282] cursor-pointer"
+            ></i>
+            <>
+              {isOpen ? (
+                <YouTubePopUp
+                  videoId="7o3K-f6vR2A"
+                  isOpen={isOpen}
+                  onClose={closeVideoPopup}
+                />
+              ) : (
+                ""
+              )}
+            </>
+          </div>
+          <p className="text-white">Sayohat</p>
         </div>
-        <p>Sayohat</p>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
 

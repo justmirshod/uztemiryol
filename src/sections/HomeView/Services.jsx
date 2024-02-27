@@ -32,14 +32,14 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white py-20">
       <Container>
         <h1 className="text-[36px] font-semibold mb-6">Xizmatlar</h1>
         <div className="grid grid-cols-3 gap-10">
           {services?.map((item, index) => (
             <div
               key={index}
-              className={`${flex.alignCenter}  shadow-md hover:shadow-lg cursor-pointer py-4 px-3 rounded-md`}
+              className={`${flex.alignCenter}  shadow-custom1 cursor-pointer py-4 px-3 rounded-md`}
             >
               <img
                 src={item.icon}

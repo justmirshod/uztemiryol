@@ -1,5 +1,7 @@
 import AboutSection from "../AboutSection";
+import Achievements from "../Achievements";
 import NewsPart from "../NewsPart";
+import Partners from "../Partners";
 import Services from "../Services";
 import VideTour from "../VideTour";
 
@@ -19,6 +21,8 @@ export default function HomeView() {
           <NewsPart />
           <VideTour />
           <Services />
+          <Achievements />
+          <Partners />
         </div>
       </div>
     </>

@@ -1,6 +1,15 @@
+import { useEffect } from "react";
 import Container from "../../../components/Container";
+import { useDispatch } from "react-redux";
+import { getCategoryById } from "../../../api/category";
 
 export default function AboutView() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCategoryById({ id: 121 }));
+  }, []);
+
   return (
     <>
       <Container className="py-20">

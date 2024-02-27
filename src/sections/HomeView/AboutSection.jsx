@@ -2,7 +2,7 @@ import Container from "../../components/Container";
 
 function AboutSection() {
   return (
-    <div className="bg-black/40 h-full border border-transparent">
+    <div className=" bg-gray-500/80 h-full border border-transparent">
       <Container className="py-4 mb-8 text-white h-full">
         <h1 className="text-[36px] font-semibold text-center mt-3 mb-3">
           Biz haqimizda
