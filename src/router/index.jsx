@@ -17,6 +17,9 @@ import TrainsService from "../pages/TrainsService";
 import TicketBuyInstruction from "../pages/TicketBuyInstruction";
 import RefundBoughtTicket from "../pages/RefundBoughtTicket";
 import AdService from "../pages/AdService";
+import RailwayTransportLaw from "../pages/RailwayTransportLaw";
+import Commands from "../pages/Commands";
+import Decisions from "../pages/Decisions";
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
 
@@ -39,8 +42,20 @@ export default function Router() {
         <Route path="schedule" element={<Schedules />} />
         <Route path="trains" element={<TrainsService />} />
         <Route path="ad_services" element={<AdService />} />
-        <Route path="ticket_buy_instruction" element={<TicketBuyInstruction />} />
-        <Route path="ticket_return_instruction" element={<RefundBoughtTicket />} />
+        <Route
+          path="ticket_buy_instruction"
+          element={<TicketBuyInstruction />}
+        />
+        <Route
+          path="ticket_return_instruction"
+          element={<RefundBoughtTicket />}
+        />
+        <Route
+          path="railway_transportation_law"
+          element={<RailwayTransportLaw />}
+        />
+        <Route path="commands" element={<Commands />} />
+        <Route path="decisions" element={<Decisions />} />
       </Route>
     </Routes>
   );

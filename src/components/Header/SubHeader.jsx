@@ -46,10 +46,6 @@ const siteRoutes = [
         name: "Onlayn qabulxona",
         link: `/${activeLang}/online_reception`,
       },
-      {
-        name: `"Temiryo'leksress" AJ ma'lumotxonasining telefon raqami`,
-        link: `/${activeLang}/company-contact`,
-      },
     ],
   },
   {
@@ -113,7 +109,7 @@ const siteRoutes = [
       },
       {
         name: " Elektron chiptani qanday harid qilish mumkin?",
-        link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-buy`,  
+        link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-buy`,
       },
       {
         name: "Elektron chiptani qanday qaytarish kerak?",
@@ -134,7 +130,7 @@ const siteRoutes = [
       },
       {
         name: "Qarorlar",
-        link: `/${activeLang}/desicions`,
+        link: `/${activeLang}/decisions`,
       },
       {
         name: "O'zbekiston Respublikasi Qonunlari",
@@ -176,10 +172,6 @@ const siteRoutes = [
       {
         name: "Tashqi audit xulosasi",
         link: `/${activeLang}/external_audit_conclusion`,
-      },
-      {
-        name: "Kol markaz",
-        link: `/${activeLang}/call_center`,
       },
     ],
   },
