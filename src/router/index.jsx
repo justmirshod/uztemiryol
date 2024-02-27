@@ -21,6 +21,7 @@ import RailwayTransportLaw from "../pages/RailwayTransportLaw";
 import Commands from "../pages/Commands";
 import Decisions from "../pages/Decisions";
 import LawsOfRepublic from "../pages/LawsOfRepublic";
+import SocietyCharter from "../pages/SocietyCharter";
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
 
@@ -58,6 +59,7 @@ export default function Router() {
         <Route path="commands" element={<Commands />} />
         <Route path="decisions" element={<Decisions />} />
         <Route path="laws_of_republic" element={<LawsOfRepublic />} />
+        <Route path="society_charter" element={<SocietyCharter />} />
       </Route>
     </Routes>
   );
