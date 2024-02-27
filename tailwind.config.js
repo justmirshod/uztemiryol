@@ -18,6 +18,9 @@ export default {
         "3xl": "1900px",
       },
     },
+    boxShadow: {
+      cardShadow: "11px 10px 38px rgba(0, 0, 0, 0.1)",
+    },
   },
   plugins: [],
 };
