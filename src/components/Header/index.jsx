@@ -41,6 +41,7 @@ export default function Header() {
       id="main-header"
       className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-20 shadow-2xl"
     >
+
       <Container className="">
         <div className={`${flex.alignCenter} justify-between  `}>
           <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
