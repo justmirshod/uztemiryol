@@ -7,9 +7,11 @@ export default {
         "black-opacity": "#10223e",
       },
       boxShadow: {
-        custom1: "0 4px 20px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+        custom1:
+          "0 4px 20px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
         cardShadow: "11px 10px 38px rgba(0, 0, 0, 0.1)",
-      }
+        custom2: "0 10px 20px rgba(0, 0, 0, 0.1)",
+      },
     },
     container: {
       padding: "1rem",
@@ -19,7 +21,7 @@ export default {
         lg: "1024px",
         xl: "1280px",
         "2xl": "1536px",
-        "3xl": "1900px",
+        // "3xl": "1900px",
       },
     },
   },
