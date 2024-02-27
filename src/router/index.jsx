@@ -8,6 +8,7 @@ import History from "../pages/History";
 import Statistics from "../pages/Statistics";
 import Vacancies from "../pages/Vacancies";
 import Contacts from "../pages/Contacts";
+import CitizenAppeal from "../pages/CitizenAppeal";
 
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
@@ -23,6 +24,7 @@ export default function Router() {
         <Route path="statistics" element={<Statistics />} />
         <Route path="vacancies" element={<Vacancies />} />
         <Route path="communications" element={<Contacts />} />
+        <Route path="citizen_appeal" element={<CitizenAppeal />} />
       </Route>
     </Routes>
   );
