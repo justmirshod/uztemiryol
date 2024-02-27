@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import svgr from "vite-plugin-svgr";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -25,5 +26,5 @@ export default {
       cardShadow: "11px 10px 38px rgba(0, 0, 0, 0.1)",
     },
   },
-  plugins: [],
+  plugins: [svgr()],
 };

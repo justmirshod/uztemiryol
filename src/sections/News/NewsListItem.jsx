@@ -1,5 +1,4 @@
 import React from "react";
-import avatra from "../../assets/icons/avatar-15.svg";
 
 function NewsListItem({ title, image, date, key }) {
   return (
@@ -10,15 +9,12 @@ function NewsListItem({ title, image, date, key }) {
         </div>
         <div className="news-text p-7">
           <p className="text-[1.25rem] leading-8 font-semibold hover:text-[#0459c4] transition-all duration-300 ease-out cursor-pointer">
-            {title}
+            {title.length > 67 ? title.slice(0, 67) + "..." : title}
           </p>
         </div>
         <div className="news-details flex items-center px-7 py-4 border-t font-semibold">
-          <div className=" w-8 h-8 rounded-full">
-            <img src={avatra} alt="" />
-          </div>
           <p className="text-[14px]">
-            admin <span className="text-[#bcbcbc]">{" / " + date}</span>
+            <span className="text-[#bcbcbc]">{date}</span>
           </p>
         </div>
       </div>

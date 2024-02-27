@@ -22,6 +22,11 @@ export default function Categories() {
       name: "E'lonlar",
       link: "/uz/announcements",
     },
+    {
+      icon: "fa-solid fa-money-bill",
+      name: "Tenderlar",
+      link: "/uz/tenders",
+    },
   ];
 
   const renderCategories = () => {
