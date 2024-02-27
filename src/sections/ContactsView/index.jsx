@@ -69,7 +69,7 @@ export default function ContactsView() {
             </div>
           ))}
         </div>
-        <p className="text-xl mt-10">
+        <p className="text-xl mt-10 mb-32">
           "Temiryo'lekspress" AJ ma'lumotxonasining telefon raqami:{" "}
           <span className="font-medium inline-block ml-4">
             {" "}
