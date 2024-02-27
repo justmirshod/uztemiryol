@@ -44,7 +44,7 @@ export default function Footer() {
           link: `/${activeLang}/vacancies`,
         },
         {
-          name: "Aloqalar",
+          name: "Bog'lanish",
           link: `/${activeLang}/communications`,
         },
         {
