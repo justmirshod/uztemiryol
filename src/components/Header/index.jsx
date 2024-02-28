@@ -14,6 +14,7 @@ import { flex } from "../../classes";
 import SubHeader from "./SubHeader";
 import { Link } from "react-router-dom";
 import UpHeader from "./UpHeader";
+import { useTranslation } from "react-i18next";
 
 //address links
 const addressLinks = [
@@ -54,6 +55,8 @@ const mediaLinks = [
 const siteLangs = ["UZ", "RU", "EN"];
 
 export default function Header() {
+  const { t } = useTranslation();
+
   return (
     <>
       <UpHeader />
@@ -68,10 +71,10 @@ export default function Header() {
                 <Logo className="w-[80px] h-[96px] cursor-pointer" />
                 <div className="ml-3">
                   <h1 className="text-xl uppercase mb-1 font-medium text-white">
-                    Temiryo'lekspress
+                    {t("company.name")}
                   </h1>
                   <p className="uppercase text-sm font-medium text-white">
-                    Aksiyadorlik Jamiyati
+                    {t("company.extension")}
                   </p>
                 </div>
               </Link>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { formatDate } from "../../utils/format-date";
 import { recentPosts } from "../../api/recentPost";
+import { formatImgLink } from "../../utils/format-image-link";
 
 function RecentPosts() {
   const dispatch = useDispatch();
@@ -25,7 +26,9 @@ function RecentPosts() {
               <div className="post-image w-20 h-20">
                 <img
                   className="w-full h-full object-cover"
-                  src={item.image}
+                  src={formatImgLink(
+                    item?.images?.find((_, index) => index === 0)?.image
+                  )}
                   alt=""
                 />
               </div>

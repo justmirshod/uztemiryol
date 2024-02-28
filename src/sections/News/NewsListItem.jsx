@@ -4,17 +4,17 @@ import { formatImgLink } from "../../utils/format-image-link";
 import { Link, useParams } from "react-router-dom";
 
 function NewsListItem({ title, images, created_at, key, id }) {
-  const activeLang = localStorage.getItem("lang") || "uz";
+  const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
   const { category } = useParams();
   return (
     <div className="news-item col-span-1" key={key}>
       <div className="shadow-cardShadow hover:bg-[#f7f7f7] hover:shadow-[none] transition-all ease-in duration-200">
-        <div className="news-image">
+        <div className="news-image h-[300px]">
           {images.length ? (
             <img
               src={formatImgLink(images[0].image)}
-              className="w-full object-cover"
+              className="w-full object-cover h-full"
               alt=""
             />
           ) : null}
