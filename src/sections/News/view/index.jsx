@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
+
 import NewsList from "../NewsList";
 import Pagination from "../../../components/Pagination/Pagitnation";
 
 function NewsView() {
   const [activePage, setActivePage] = useState(0);
 
-  useEffect(() => {
-    fetch("https://e9c0-213-230-125-170.ngrok-free.app/");
-  }, []);
 
   return (
     <main>

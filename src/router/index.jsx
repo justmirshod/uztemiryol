@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import GeneralLayout from "../layout/GeneralLayout";
 import Home from "../pages/Home";
 import News from "../pages/News";
@@ -23,6 +23,8 @@ import Decisions from "../pages/Decisions";
 import LawsOfRepublic from "../pages/LawsOfRepublic";
 import SocietyCharter from "../pages/SocietyCharter";
 import BussinesPlan from "../pages/BussinesPlan";
+import Gallery from "../pages/Gallery";
+import SingleBlog from "../pages/SingleBlog";
 export default function Router() {
   const activeLang = localStorage.getItem("lang") || "uz";
 
@@ -39,8 +41,12 @@ export default function Router() {
         <Route path="communications" element={<Contacts />} />
         <Route path="citizen_appeal" element={<CitizenAppeal />} />
         <Route path="online_reception" element={<OnlineReception />} />
+        <Route path="photos" element={<Gallery />} />
         <Route element={<MediaSubLayout />}>
           <Route path="news" element={<News />} />
+          <Route path="announcements" element={<News />} />
+          <Route path="tenders" element={<News />} />
+          <Route path="news/:id" element={<SingleBlog />} />
         </Route>
         <Route path="schedule" element={<Schedules />} />
         <Route path="trains" element={<TrainsService />} />
