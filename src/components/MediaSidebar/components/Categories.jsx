@@ -5,7 +5,7 @@ export default function Categories() {
     {
       icon: "fa-solid fa-envelope",
       name: "Yangiliklar",
-      link: "/uz/news",
+      link: "/uz/blog/news",
     },
     {
       icon: "fa-solid fa-image",
@@ -15,17 +15,17 @@ export default function Categories() {
     {
       icon: "fa-solid fa-video",
       name: "Videolar",
-      link: "/uz/videos",
+      link: "https://youtube.com",
     },
     {
       icon: "fa-solid fa-scroll",
       name: "E'lonlar",
-      link: "/uz/announcements",
+      link: "/uz/blog/announcements",
     },
     {
       icon: "fa-solid fa-money-bill",
       name: "Tenderlar",
-      link: "/uz/tenders",
+      link: "/uz/blog/tenders",
     },
   ];
 

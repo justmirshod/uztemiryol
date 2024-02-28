@@ -48,10 +48,8 @@ export default function Router() {
         <Route path="online_reception" element={<OnlineReception />} />
         <Route path="photos" element={<Gallery />} />
         <Route element={<MediaSubLayout />}>
-          <Route path="news" element={<News />} />
-          <Route path="announcements" element={<News />} />
-          <Route path="tenders" element={<News />} />
-          <Route path="news/:id" element={<SingleBlog />} />
+          <Route path="blog/:category" element={<News />} />
+          <Route path="blog-detail/:category/:id" element={<SingleBlog />} />
         </Route>
         <Route path="schedule" element={<Schedules />} />
         <Route path="trains" element={<TrainsService />} />

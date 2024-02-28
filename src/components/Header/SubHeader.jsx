@@ -53,11 +53,11 @@ const siteRoutes = [
     routes: [
       {
         name: `Yangiliklar`,
-        link: `/${activeLang}/news`,
+        link: `/${activeLang}/blog/news`,
       },
       {
         name: "Tenderlar",
-        link: `/${activeLang}/tenders`,
+        link: `/${activeLang}/blog/tenders`,
       },
       {
         name: "Fotogalereya",
@@ -65,11 +65,11 @@ const siteRoutes = [
       },
       {
         name: "Videolar",
-        link: `/${activeLang}/videos`,
+        link: `https://youtube.com`,
       },
       {
         name: "E'lonlar",
-        link: `/${activeLang}/announcements`,
+        link: `/${activeLang}/blog/announcements`,
       },
     ],
   },
