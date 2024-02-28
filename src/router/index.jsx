@@ -24,44 +24,45 @@ import LawsOfRepublic from "../pages/LawsOfRepublic";
 import SocietyCharter from "../pages/SocietyCharter";
 import BussinesPlan from "../pages/BussinesPlan";
 export default function Router() {
-  const activeLang = localStorage.getItem("lang") || "uz";
-
   return (
     <Routes>
-      <Route path={`:${activeLang}/`} element={<GeneralLayout />}>
-        <Route index element={<Home />} />
-        <Route path="about_us" element={<About />} />
-        <Route path="managers" element={<Managers />} />
-        <Route path="development_strategy" element={<DevelopmentStrategy />} />
-        <Route path="history" element={<History />} />
-        <Route path="statistics" element={<Statistics />} />
-        <Route path="vacancies" element={<Vacancies />} />
-        <Route path="communications" element={<Contacts />} />
-        <Route path="citizen_appeal" element={<CitizenAppeal />} />
-        <Route path="online_reception" element={<OnlineReception />} />
-        <Route element={<MediaSubLayout />}>
-          <Route path="news" element={<News />} />
-        </Route>
-        <Route path="schedule" element={<Schedules />} />
-        <Route path="trains" element={<TrainsService />} />
-        <Route path="ad_services" element={<AdService />} />
+      <Route element={<GeneralLayout />}>
+        <Route path="/:lang" element={<Home />} />
+        <Route path="/:lang/about_us" element={<About />} />
+        <Route path="/:lang/managers" element={<Managers />} />
         <Route
-          path="ticket_buy_instruction"
+          path="/:lang/development_strategy"
+          element={<DevelopmentStrategy />}
+        />
+        <Route path="/:lang/history" element={<History />} />
+        <Route path="/:lang/statistics" element={<Statistics />} />
+        <Route path="/:lang/vacancies" element={<Vacancies />} />
+        <Route path="/:lang/communications" element={<Contacts />} />
+        <Route path="/:lang/citizen_appeal" element={<CitizenAppeal />} />
+        <Route path="/:lang/online_reception" element={<OnlineReception />} />
+        <Route element={<MediaSubLayout />}>
+          <Route path="/:lang/news" element={<News />} />
+        </Route>
+        <Route path="/:lang/schedule" element={<Schedules />} />
+        <Route path="/:lang/trains" element={<TrainsService />} />
+        <Route path="/:lang/ad_services" element={<AdService />} />
+        <Route
+          path="/:lang/ticket_buy_instruction"
           element={<TicketBuyInstruction />}
         />
         <Route
-          path="ticket_return_instruction"
+          path="/:lang/ticket_return_instruction"
           element={<RefundBoughtTicket />}
         />
         <Route
-          path="railway_transportation_law"
+          path="/:lang/railway_transportation_law"
           element={<RailwayTransportLaw />}
         />
-        <Route path="commands" element={<Commands />} />
-        <Route path="decisions" element={<Decisions />} />
-        <Route path="laws_of_republic" element={<LawsOfRepublic />} />
-        <Route path="society_charter" element={<SocietyCharter />} />
-        <Route path="bussines_plan" element={<BussinesPlan />} />
+        <Route path="/:lang/commands" element={<Commands />} />
+        <Route path="/:lang/decisions" element={<Decisions />} />
+        <Route path="/:lang/laws_of_republic" element={<LawsOfRepublic />} />
+        <Route path="/:lang/society_charter" element={<SocietyCharter />} />
+        <Route path="/:lang/bussines_plan" element={<BussinesPlan />} />
       </Route>
     </Routes>
   );
