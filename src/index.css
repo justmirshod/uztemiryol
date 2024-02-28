@@ -14,3 +14,8 @@ html {
 .header-gradient {
   background: linear-gradient(-120deg, #021b79, #0575e6, #021b79);
 }
+
+li {
+  margin: 0 !important;
+  list-style-type: none !important;
+}

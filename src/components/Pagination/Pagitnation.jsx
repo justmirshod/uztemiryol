@@ -1,5 +1,4 @@
 import ReactPaginate from "react-paginate";
-import PropTypes from "prop-types";
 
 function Pagination({ pageCount, setState, activePageIndex }) {
   const handlePageClick = (event) => {
@@ -24,11 +23,5 @@ function Pagination({ pageCount, setState, activePageIndex }) {
     </>
   );
 }
-
-Pagination.PropTypes = {
-  pageCount: PropTypes.number,
-  setState: PropTypes.func,
-  activePageIndex: PropTypes.number || PropTypes.string,
-};
 
 export default Pagination;
