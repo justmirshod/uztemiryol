@@ -42,7 +42,7 @@ export default function GeneralLayout() {
             className={`absolute w-full bg-[#052a9980]  z-10 h-full top-0 ${flex.alignCenter} text-white`}
           >
             <Container>
-              <h1 className="text-[60px]">O'ztemiryo'lyo'lovchi</h1>
+              <h1 className="text-[60px]">Temiryo'lekspress</h1>
             </Container>
           </div>
         </div>

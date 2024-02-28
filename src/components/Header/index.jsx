@@ -52,7 +52,7 @@ export default function Header() {
                 <Logo className="w-[80px] h-[96px] cursor-pointer" />
                 <div className="ml-3">
                   <h1 className="text-xl uppercase mb-1 font-medium text-white">
-                    Afrosiyob Express
+                    Temiryo'lekspress
                   </h1>
                   <p className="uppercase text-sm font-medium text-white">
                     Aksiyadorlik Jamiyati
