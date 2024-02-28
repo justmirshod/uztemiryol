@@ -13,6 +13,8 @@ import search_icon from "../../assets/icons/search.svg";
 //classes
 import { flex } from "../../classes";
 import SubHeader from "./SubHeader";
+import { Link } from "react-router-dom";
+import UpHeader from "./UpHeader";
 
 //address links
 const addressLinks = [
@@ -37,69 +39,73 @@ const siteLangs = ["UZ", "RU", "EN"];
 
 export default function Header() {
   return (
-    <div
-      id="main-header"
-      className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-[1200] shadow-2xl"
-    >
-
-      <Container className="">  
-        <div className={`${flex.alignCenter} justify-between  `}>
-          <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
-            <Logo className="w-[80px] h-[96px]" />
-            <div className="ml-3">
-              <h1 className="text-xl uppercase mb-1 font-medium text-white">
-                Afrosiyob Express
-              </h1>
-              <p className="uppercase text-sm font-medium text-white">
-                Aksiyadorlik Jamiyati
-              </p>
+    <>
+      <UpHeader />
+      <div
+        id="main-header"
+        className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-[1200] shadow-2xl"
+      >
+        <Container className="">
+          <div className={`${flex.alignCenter} justify-between  `}>
+            <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
+              <Link to="/" className={flex.alignCenter}>
+                <Logo className="w-[80px] h-[96px] cursor-pointer" />
+                <div className="ml-3">
+                  <h1 className="text-xl uppercase mb-1 font-medium text-white">
+                    Temiryo'lekspress
+                  </h1>
+                  <p className="uppercase text-sm font-medium text-white">
+                    Aksiyadorlik Jamiyati
+                  </p>
+                </div>
+              </Link>
             </div>
-          </div>
-          <div className={`main-part w-[65%]`}>
-            <div
-              className={`${flex.alignCenter} justify-between pb-4 border-b`}
-            >
-              <div className={`address-part ${flex.alignCenter}`}>
-                {addressLinks?.map((item, index) => (
-                  <div className={`${flex.alignCenter} mr-4`} key={index}>
-                    <img src={item?.icon} width="20px" height="20px" alt="" />
-                    <span className="ml-1 text-white">{item?.title}</span>
-                  </div>
-                ))}
-              </div>
-              <div className={`social-media-apps ${flex.alignCenter}`}>
-                {mediaLinks?.map((media, index) => (
-                  <img
-                    src={media}
-                    width="30px"
-                    height="30px"
-                    className="mr-4"
-                    key={index}
-                  />
-                ))}
-              </div>
-              <div className={`search-and-langs ${flex.alignCenter}`}>
-                {/* <img
+            <div className={`main-part w-[65%]`}>
+              <div
+                className={`${flex.alignCenter} justify-between pb-4 border-b`}
+              >
+                <div className={`address-part ${flex.alignCenter}`}>
+                  {addressLinks?.map((item, index) => (
+                    <div className={`${flex.alignCenter} mr-4`} key={index}>
+                      <img src={item?.icon} width="20px" height="20px" alt="" />
+                      <span className="ml-1 text-white">{item?.title}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className={`social-media-apps ${flex.alignCenter}`}>
+                  {mediaLinks?.map((media, index) => (
+                    <img
+                      src={media}
+                      width="30px"
+                      height="30px"
+                      className="mr-4"
+                      key={index}
+                    />
+                  ))}
+                </div>
+                <div className={`search-and-langs ${flex.alignCenter}`}>
+                  {/* <img
                 src={search_icon}
                 width="30px"
                 height="30px"
                 className="mr-4"
                 alt=""
               /> */}
-                {siteLangs.map((lang, index) => (
-                  <span
-                    className="uppercase font-semibold mr-2 text-white"
-                    key={index}
-                  >
-                    {lang}
-                  </span>
-                ))}
+                  {siteLangs.map((lang, index) => (
+                    <span
+                      className="uppercase font-semibold mr-2 text-white"
+                      key={index}
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
               </div>
+              <SubHeader />
             </div>
-            <SubHeader />
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </>
   );
 }

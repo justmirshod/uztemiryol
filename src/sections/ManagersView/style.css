@@ -1,0 +1,16 @@
+.custom-height{
+  height: 300px !important;
+}
+
+.border-box{
+  box-sizing: border-box !important;
+}
+
+.child{
+  height: 0;
+  overflow: auto;
+}
+
+.parent:hover > .child {
+  height: fit-content;
+}

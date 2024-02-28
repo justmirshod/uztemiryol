@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import GeneralLayout from "../layout/GeneralLayout";
 import Home from "../pages/Home";
 import News from "../pages/News";
@@ -25,12 +25,17 @@ import SocietyCharter from "../pages/SocietyCharter";
 import BussinesPlan from "../pages/BussinesPlan";
 import Gallery from "../pages/Gallery";
 import SingleBlog from "../pages/SingleBlog";
+import SupervisoryBoard from "../pages/SupervisoryBoard";
+import Reports from "../pages/Reports";
+import Inspection from "../pages/Inspection";
+import InternalAudit from "../pages/InternalAudit";
+import InternalDocs from "../pages/InternalDocs";
+import ExternalAudit from "../pages/ExternalAudit";
 export default function Router() {
-  const activeLang = localStorage.getItem("lang") || "uz";
-
   return (
     <Routes>
-      <Route path={`:${activeLang}/`} element={<GeneralLayout />}>
+      <Route path="/" element={<Navigate to="/uz" />} />
+      <Route path={`:lang/`} element={<GeneralLayout />}>
         <Route index element={<Home />} />
         <Route path="about_us" element={<About />} />
         <Route path="managers" element={<Managers />} />
@@ -68,6 +73,12 @@ export default function Router() {
         <Route path="laws_of_republic" element={<LawsOfRepublic />} />
         <Route path="society_charter" element={<SocietyCharter />} />
         <Route path="bussines_plan" element={<BussinesPlan />} />
+        <Route path="supervisory_board" element={<SupervisoryBoard />} />
+        <Route path="reports" element={<Reports />} />
+        <Route path="inspection" element={<Inspection />} />
+        <Route path="internal_audit" element={<InternalAudit />} />
+        <Route path="internal_documents" element={<InternalDocs />} />
+        <Route path="external_audit_conclusion" element={<ExternalAudit />} />
       </Route>
     </Routes>
   );

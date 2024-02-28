@@ -1,13 +1,26 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import bg_img from "../assets/images/bg09.png";
 import { flex } from "../classes";
 import Container from "../components/Container";
 import Footer from "../components/Footer";
 import "./style.css";
+import { useEffect } from "react";
+import path from "path";
 
 export default function GeneralLayout() {
+  const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { lang } = useParams();
+  const activeLang = localStorage.getItem("lang") || "uz";
+
+  console.log(lang);
+
+  useEffect(() => {
+    if (lang === "uz" || lang === "ru" || lang === "en") return;
+    else navigate(`/${activeLang}${pathname}`, { replace: true });
+    window.scrollTo({ top: 0 });
+  }, [pathname]);
 
   return (
     <>
@@ -29,7 +42,7 @@ export default function GeneralLayout() {
             className={`absolute w-full bg-[#052a9980]  z-10 h-full top-0 ${flex.alignCenter} text-white`}
           >
             <Container>
-              <h1 className="text-[60px]">O'ztemiryo'lyo'lovchi</h1>
+              <h1 className="text-[60px]">Temiryo'lekspress</h1>
             </Container>
           </div>
         </div>
