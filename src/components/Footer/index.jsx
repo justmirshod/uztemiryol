@@ -3,14 +3,11 @@ import Container from "../Container";
 import Logo from "../Logo";
 
 //icons
-import address_icon from "../../assets/icons/location-services-active-svgrepo-com.svg";
-import phone_icon from "../../assets/icons/phone-svgrepo-com.svg";
-import mail_icon from "../../assets/icons/mail-svgrepo-com.svg";
 import instagram_icon from "../../assets/icons/instagram.png";
 import telegram_icon from "../../assets/icons/telegram.png";
 import youtube_icon from "../../assets/icons/youtube.png";
 import facebook_icon from "../../assets/icons/facebook.png";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const activeLang = localStorage.getItem("lang") || "uz";
@@ -213,39 +210,35 @@ export default function Footer() {
               </h1>
             </div>
             <div className="mt-32">
-              <img
-                src={address_icon}
-                width="25px"
-                alt=""
-                className="inline-block mr-2"
-              />
+              <i className="fa-solid fa-location-dot text-white mr-2"></i>
               <span className="text-white">
                 Toshkent, Amir Temur 16. 190-uy
               </span>
             </div>
             <div className="mt-6">
-              <img
-                src={phone_icon}
-                width="25px"
-                alt=""
-                className="inline-block mr-2"
-              />
+              <i className="fa-solid fa-phone text-white mr-2"></i>
               <span className="text-white">+998 (99) 211-35-16</span>
             </div>
             <div className="mt-6">
-              <img
-                src={mail_icon}
-                width="25px"
-                alt=""
-                className="inline-block mr-2"
-              />
+              <i className="fa-regular fa-message text-white mr-2"></i>
               <span className="text-white">express@info.uz</span>
             </div>
             <div className={`${flex.alignCenter} mt-5`}>
-              <img src={instagram_icon} className="w-8 h-8 mr-3" alt="" />
-              <img src={telegram_icon} className="w-8 h-8 mr-3" alt="" />
-              <img src={youtube_icon} className="w-8 h-8 mr-3" alt="" />
-              <img src={facebook_icon} className="w-8 h-8 mr-3" alt="" />
+              <a href="https://t.me/railwayexpress_uz" target="_blank">
+                <img src={telegram_icon} className="w-8 h-8 mr-3" alt="" />
+              </a>
+              <a
+                href="https://www.instagram.com/uzrailwayexpress?igsh=MzRlODBiNWFlZA=="
+                target="_blank"
+              >
+                <img src={instagram_icon} className="w-8 h-8 mr-3" alt="" />
+              </a>
+              <a href="https://youtube.com" target="_blank">
+                <img src={youtube_icon} className="w-8 h-8 mr-3" alt="" />
+              </a>
+              <a href="https://facebook.com" target="_blank">
+                <img src={facebook_icon} className="w-8 h-8 mr-3" alt="" />
+              </a>
             </div>
           </div>
           <div className="col-span-3 flex flex-col">

@@ -9,7 +9,6 @@ import instagram_icon from "../../assets/icons/instagram.png";
 import telegram_icon from "../../assets/icons/telegram.png";
 import youtube_icon from "../../assets/icons/youtube.png";
 import facebook_icon from "../../assets/icons/facebook.png";
-import search_icon from "../../assets/icons/search.svg";
 //classes
 import { flex } from "../../classes";
 import SubHeader from "./SubHeader";
@@ -33,7 +32,24 @@ const addressLinks = [
 ];
 
 //social media
-const mediaLinks = [instagram_icon, telegram_icon, youtube_icon, facebook_icon];
+const mediaLinks = [
+  {
+    icon: instagram_icon,
+    link: "https://www.instagram.com/uzrailwayexpress?igsh=MzRlODBiNWFlZA==",
+  },
+  {
+    icon: telegram_icon,
+    link: "https://t.me/railwayexpress_uz",
+  },
+  {
+    icon: youtube_icon,
+    link: "https://youtube.com",
+  },
+  {
+    icon: facebook_icon,
+    link: "https://facebook.com",
+  },
+];
 
 const siteLangs = ["UZ", "RU", "EN"];
 
@@ -74,13 +90,15 @@ export default function Header() {
                 </div>
                 <div className={`social-media-apps ${flex.alignCenter}`}>
                   {mediaLinks?.map((media, index) => (
-                    <img
-                      src={media}
-                      width="30px"
-                      height="30px"
-                      className="mr-4"
-                      key={index}
-                    />
+                    <a href={media.link} target="_blank">
+                      <img
+                        src={media.icon}
+                        width="30px"
+                        height="30px"
+                        className="mr-4"
+                        key={index}
+                      />
+                    </a>
                   ))}
                 </div>
                 <div className={`search-and-langs ${flex.alignCenter}`}>
