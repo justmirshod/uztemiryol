@@ -26,7 +26,7 @@ import BussinesPlan from "../pages/BussinesPlan";
 export default function Router() {
   return (
     <Routes>
-      <Route element={<GeneralLayout />}>
+      <Route path="/" element={<GeneralLayout />}>
         <Route path="/:lang" element={<Home />} />
         <Route path="/:lang/about_us" element={<About />} />
         <Route path="/:lang/managers" element={<Managers />} />

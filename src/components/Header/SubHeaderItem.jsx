@@ -8,7 +8,7 @@ export default function SubHeaderItem({ route }) {
       </Link>
       <div className="absolute h-0 group-hover:h-auto transition-all duration-100 overflow-hidden  min-w-[300px] max-w-[400px] z-30">
         <div className="h-[10px]"></div>
-        <div className="flex flex-col bg-white/70  box-border px-2 rounded-lg shadow-lg">
+        <div className="flex flex-col bg-white box-border px-2 rounded-lg">
           {route?.routes?.map((item, index) => (
             <Link
               key={index}

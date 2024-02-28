@@ -25,6 +25,9 @@ const laws = [
 export default function RepublicLawsView() {
   return (
     <Container className="py-20">
+      <h1 className="text-[24px] font-semibold mb-8">
+        O'zbekiston Respublikasi qonunlari
+      </h1>
       <>
         {laws?.map((law, index) => (
           <div

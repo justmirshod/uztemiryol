@@ -13,6 +13,7 @@ import search_icon from "../../assets/icons/search.svg";
 //classes
 import { flex } from "../../classes";
 import SubHeader from "./SubHeader";
+import { Link } from "react-router-dom";
 
 //address links
 const addressLinks = [
@@ -41,19 +42,20 @@ export default function Header() {
       id="main-header"
       className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-[1200] shadow-2xl"
     >
-
-      <Container className="">  
+      <Container className="">
         <div className={`${flex.alignCenter} justify-between  `}>
           <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
-            <Logo className="w-[80px] h-[96px]" />
-            <div className="ml-3">
-              <h1 className="text-xl uppercase mb-1 font-medium text-white">
-                Afrosiyob Express
-              </h1>
-              <p className="uppercase text-sm font-medium text-white">
-                Aksiyadorlik Jamiyati
-              </p>
-            </div>
+            <Link to="/" className={flex.alignCenter}>
+              <Logo className="w-[80px] h-[96px] cursor-pointer" />
+              <div className="ml-3">
+                <h1 className="text-xl uppercase mb-1 font-medium text-white">
+                  Afrosiyob Express
+                </h1>
+                <p className="uppercase text-sm font-medium text-white">
+                  Aksiyadorlik Jamiyati
+                </p>
+              </div>
+            </Link>
           </div>
           <div className={`main-part w-[65%]`}>
             <div
