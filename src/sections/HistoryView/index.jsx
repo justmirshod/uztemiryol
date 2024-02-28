@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { getCategoryById } from "../../api/category";
 
 //
-import img from "../../assets/images/picture1.png";
 
 export default function HistoryView() {
   const dispatch = useDispatch();
@@ -29,10 +28,6 @@ export default function HistoryView() {
             __html: data?.find((_, index) => index === 0)?.description,
           }}
         ></div>
-        <div className="border">
-          <h1>Hello world</h1>
-          <img src={img} alt="" />
-        </div>
       </Container>
     </>
   );

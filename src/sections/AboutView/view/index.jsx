@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Container from "../../../components/Container";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategoryById } from "../../../api/category";
+import img from "../../../assets/images/picture1.png";
 
 import "../styles.css";
 
@@ -26,6 +27,7 @@ export default function AboutView() {
           }}
           className="text-lg"
         ></div>
+        <img src={img} alt="" className="w-full mt-10" />
       </Container>
     </>
   );
