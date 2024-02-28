@@ -1,10 +1,22 @@
+import { useDispatch } from "react-redux";
+import { setSearch } from "../../redux/slices/blog.slice";
+
 export default function Search() {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    dispatch(setSearch(formData.get("search")));
+  };
+
   return (
     <div className="widget widget-search">
-      <form className="relative" onSubmit={(e) => e.preventDefault()}>
+      <form className="relative" onSubmit={handleSubmit}>
         <input
           className="w-full h-[50px] leading-[1.7] text-[16px] pl-5 pr-12 border-0 outline-none font-normal mb-0 rounded-0 shadow-cardShadow"
           type="text"
+          name="search"
           placeholder="Qidiruv..."
         />
         <button

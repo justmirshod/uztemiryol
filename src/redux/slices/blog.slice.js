@@ -8,11 +8,17 @@ const initialState = {
   blogLoading: true,
   gallery: [],
   galleryLoading: true,
+  search: ""
 }
 
 const blogSlice = createSlice({
   name: "blog",
   initialState,
+  reducers: {
+    setSearch: (state, action) => {
+      state.search = action.payload
+    }
+  },
   extraReducers: builder => {
     builder
       .addCase(getBlogList.pending, (state) => {
@@ -48,4 +54,5 @@ const blogSlice = createSlice({
   }
 })
 export default blogSlice.reducer
+export const { setSearch } = blogSlice.actions
 

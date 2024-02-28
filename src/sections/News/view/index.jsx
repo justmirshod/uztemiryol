@@ -10,7 +10,7 @@ function NewsView() {
   const [activePage, setActivePage] = useState(0);
   const dispatch = useDispatch();
   const { category } = useParams();
-  const { blogs } = useSelector((state) => state.blogs);
+  const { blogs, search } = useSelector((state) => state.blogs);
   const categoryId = [
     {
       name: "news",
@@ -28,8 +28,10 @@ function NewsView() {
 
   useEffect(() => {
     const activeCategory = categoryId.find((item) => item.name === category).id;
-    dispatch(getBlogList({ id: activeCategory, page: +activePage + 1 }));
-  }, [category, activePage]);
+    dispatch(
+      getBlogList({ id: activeCategory, page: +activePage + 1, search })
+    );
+  }, [category, activePage, search]);
 
   return (
     <main>
