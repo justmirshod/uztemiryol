@@ -10,3 +10,10 @@ export const getSingleBlog = createAsyncThunk("blog/singleBlog", async (id) => {
   const { request } = useHttp()
   return await request({ url: `/content/contentlist/detail/${id}/` })
 })
+
+export const getGallery = createAsyncThunk("blog/gallery", async () => {
+  const { request } = useHttp()
+  return await request({ url: `/content/contentlist/20/contents/` })
+})
+
+

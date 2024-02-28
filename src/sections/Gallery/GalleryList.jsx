@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import Loader from "../../components/Loader/Loader";
+import { formatImgLink } from "../../utils/format-image-link";
 
 function GalleryList() {
-  const [selectedId, setSelectedId] = useState(null);
-
+  const { gallery, galleryLoading } = useSelector((state) => state.blogs);
   const photos = [
     {
       img: "",
@@ -66,7 +68,10 @@ function GalleryList() {
     },
   ];
   const renderGalleryItems = () => {
-    return photos.map((item, index) => {
+    if (galleryLoading) return <Loader />;
+    if (!gallery?.results?.length)
+      return <h1 className="text-center">Hech narsa topilmadi</h1>;
+    return gallery?.results?.map((item, index) => {
       return (
         <div
           key={index}
@@ -74,7 +79,9 @@ function GalleryList() {
         >
           <div className="img-box hover:scale-105 transition-all duration-300 ease-in">
             <img
-              src={item.title}
+              src={formatImgLink(
+                item?.images?.find((_, index) => index === 0)?.image
+              )}
               className="w-full h-[500px] object-cover"
               alt=""
             />
