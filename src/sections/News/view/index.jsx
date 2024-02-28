@@ -28,8 +28,8 @@ function NewsView() {
 
   useEffect(() => {
     const activeCategory = categoryId.find((item) => item.name === category).id;
-    dispatch(getBlogList(activeCategory));
-  }, [category]);
+    dispatch(getBlogList({ id: activeCategory, page: +activePage + 1 }));
+  }, [category, activePage]);
 
   return (
     <main>
