@@ -12,7 +12,11 @@ function NewsListItem({ title, images, created_at, key, id }) {
       <div className="shadow-cardShadow hover:bg-[#f7f7f7] hover:shadow-[none] transition-all ease-in duration-200">
         <div className="news-image">
           {images.length ? (
-            <img src={formatImgLink(images[0].image)} alt="" />
+            <img
+              src={formatImgLink(images[0].image)}
+              className="w-full object-cover"
+              alt=""
+            />
           ) : null}
         </div>
         <div className="news-text p-7">
