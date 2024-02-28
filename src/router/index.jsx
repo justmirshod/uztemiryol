@@ -23,6 +23,12 @@ import Decisions from "../pages/Decisions";
 import LawsOfRepublic from "../pages/LawsOfRepublic";
 import SocietyCharter from "../pages/SocietyCharter";
 import BussinesPlan from "../pages/BussinesPlan";
+import SupervisoryBoard from "../pages/SupervisoryBoard";
+import Reports from "../pages/Reports";
+import Inspection from "../pages/Inspection";
+import InternalAudit from "../pages/InternalAudit";
+import InternalDocs from "../pages/InternalDocs";
+import ExternalAudit from "../pages/ExternalAudit";
 export default function Router() {
   return (
     <Routes>
@@ -63,6 +69,15 @@ export default function Router() {
         <Route path="/:lang/laws_of_republic" element={<LawsOfRepublic />} />
         <Route path="/:lang/society_charter" element={<SocietyCharter />} />
         <Route path="/:lang/bussines_plan" element={<BussinesPlan />} />
+        <Route path="/:lang/supervisory_board" element={<SupervisoryBoard />} />
+        <Route path="/:lang/reports" element={<Reports />} />
+        <Route path="/:lang/inspection" element={<Inspection />} />
+        <Route path="/:lang/internal_audit" element={<InternalAudit />} />
+        <Route path="/:lang/internal_documents" element={<InternalDocs />} />
+        <Route
+          path="/:lang/external_audit_conclusion"
+          element={<ExternalAudit />}
+        />
       </Route>
     </Routes>
   );
