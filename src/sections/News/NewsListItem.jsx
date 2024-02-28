@@ -4,7 +4,7 @@ import { formatImgLink } from "../../utils/format-image-link";
 import { Link, useParams } from "react-router-dom";
 
 function NewsListItem({ title, images, created_at, key, id }) {
-  const activeLang = localStorage.getItem("lang") || "uz";
+  const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
   const { category } = useParams();
   return (

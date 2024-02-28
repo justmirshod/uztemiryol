@@ -7,12 +7,14 @@ import Footer from "../components/Footer";
 import "./style.css";
 import { useEffect } from "react";
 import path from "path";
+import { useTranslation } from "react-i18next";
 
 export default function GeneralLayout() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { lang } = useParams();
-  const activeLang = localStorage.getItem("lang") || "uz";
+  const { i18n } = useTranslation();
+  const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
   useEffect(() => {
     if (lang === "uz" || lang === "ru" || lang === "en") return;
@@ -21,7 +23,7 @@ export default function GeneralLayout() {
   }, [pathname]);
 
   useEffect(() => {
-    localStorage.setItem("lang", lang);
+    i18n.changeLanguage(lang);
   }, [lang]);
 
   return (

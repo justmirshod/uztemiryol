@@ -3,36 +3,39 @@ import Container from "../../components/Container";
 //icons
 import train_icon from "../../assets/icons/train.png";
 import { flex } from "../../classes";
-
-const achievements = [
-  {
-    title: "Poyezdlar",
-    number: 6,
-    icon: train_icon,
-  },
-  {
-    title: "Poyezdlar",
-    number: 6,
-    icon: train_icon,
-  },
-  {
-    title: "Poyezdlar",
-    number: 6,
-    icon: train_icon,
-  },
-  {
-    title: "Poyezdlar",
-    number: 6,
-    icon: train_icon,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Achievements() {
+  const { t } = useTranslation();
+
+  const achievements = [
+    {
+      title: t("trains"),
+      number: 6,
+      icon: train_icon,
+    },
+    {
+      title: t("trains"),
+      number: 6,
+      icon: train_icon,
+    },
+    {
+      title: t("trains"),
+      number: 6,
+      icon: train_icon,
+    },
+    {
+      title: t("trains"),
+      number: 6,
+      icon: train_icon,
+    },
+  ];
+
   return (
     <div className="bg-gray-500/80">
       <Container className="py-20">
         <h1 className="text-[32px] font-medium mb-10 text-white">
-          Bizning yutuqlar
+          {t("achievements")}
         </h1>
         <div className="grid grid-cols-4 gap-10">
           {achievements?.map((item, index) => (

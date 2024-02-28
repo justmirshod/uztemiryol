@@ -2,39 +2,42 @@ import Container from "../../components/Container";
 
 import emblem_icon from "../../assets/icons/gerb.png";
 import { flex } from "../../classes";
-
-const services = [
-  {
-    name: "Yo'lovchi poyezdlar",
-    icon: emblem_icon,
-  },
-  {
-    name: "Turistik xizmatlar",
-    icon: emblem_icon,
-  },
-  {
-    name: "Reklama xizmatlari",
-    icon: emblem_icon,
-  },
-  {
-    name: "Davlat xizmatlari",
-    icon: emblem_icon,
-  },
-  {
-    name: "Chiptani qanday sotib olish mumkin?",
-    icon: emblem_icon,
-  },
-  {
-    name: "Chiptani qanday qaytarish mumkin?",
-    icon: emblem_icon,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      name: t("trains"),
+      icon: emblem_icon,
+    },
+    {
+      name: t("tourist_services"),
+      icon: emblem_icon,
+    },
+    {
+      name: t("ad_services"),
+      icon: emblem_icon,
+    },
+    {
+      name: t("state_services"),
+      icon: emblem_icon,
+    },
+    {
+      name: t("how_to_buy_ticket"),
+      icon: emblem_icon,
+    },
+    {
+      name: t("how_to_buy_ticket"),
+      icon: emblem_icon,
+    },
+  ];
+
   return (
     <div className="bg-white py-20">
       <Container>
-        <h1 className="text-[36px] font-semibold mb-6">Xizmatlar</h1>
+        <h1 className="text-[36px] font-semibold mb-6">{t("services")}</h1>
         <div className="grid grid-cols-3 gap-10">
           {services?.map((item, index) => (
             <div

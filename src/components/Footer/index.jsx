@@ -13,7 +13,7 @@ import facebook_icon from "../../assets/icons/facebook.png";
 import { Link, useParams } from "react-router-dom";
 
 export default function Footer() {
-  const activeLang = localStorage.getItem("lang") || "uz";
+  const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
   const siteRoutes = [
     {

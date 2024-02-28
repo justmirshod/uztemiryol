@@ -4,7 +4,7 @@ import Container from "../Container";
 import Logo from "../Logo";
 import SubHeaderItem from "./SubHeaderItem";
 
-const activeLang = localStorage.getItem("lang") || "uz";
+const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
 const siteRoutes = [
   {
