@@ -21,15 +21,15 @@ import { useTranslation } from "react-i18next";
 const addressLinks = [
   {
     title: "Toshkent, Amir Temur 16. 190-uy",
-    icon: address_icon,
+    icon: "fa-solid fa-location-dot",
   },
   {
     title: "+998 (99) 211-35-16",
-    icon: phone_icon,
+    icon: "fa-solid fa-phone",
   },
   {
     title: "express@info.uz",
-    icon: mail_icon,
+    icon: "fa-regular fa-message",
   },
 ];
 
@@ -49,8 +49,8 @@ export default function Header() {
         className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-[1200] shadow-2xl"
       >
         <Container className="">
-          <div className={`${flex.alignCenter} justify-between  `}>
-            <div className={`logo-part w-1/5 ${flex.alignCenter} `}>
+          <div className={`${flex.alignCenter} justify-between`}>
+            <div className={`logo-part w-1/5 ${flex.alignCenter}`}>
               <Link to="/" className={flex.alignCenter}>
                 <Logo className="w-[80px] h-[96px] cursor-pointer" />
                 <div className="ml-3">
@@ -70,7 +70,7 @@ export default function Header() {
                 <div className={`address-part ${flex.alignCenter}`}>
                   {addressLinks?.map((item, index) => (
                     <div className={`${flex.alignCenter} mr-4`} key={index}>
-                      <img src={item?.icon} width="20px" height="20px" alt="" />
+                      <i className={`${item?.icon} text-white text-5`}></i>
                       <span className="ml-1 text-white">{item?.title}</span>
                     </div>
                   ))}
