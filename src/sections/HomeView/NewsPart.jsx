@@ -40,9 +40,12 @@ export default function NewsPart() {
             alt=""
           />
           <div className="py-3 flex flex-col justify-between px-4">
-            <p className="text-lg font-medium hover:text-blue-800 cursor-pointer">
+            <Link
+              to={`/${activeLang}/blog-detail/news/${item?.id}`}
+              className="text-lg font-medium hover:text-blue-800 cursor-pointer"
+            >
               {item?.title}
-            </p>
+            </Link>
           </div>
         </div>
         <div className={`${flex.alignCenter} border-t`}>
