@@ -20,12 +20,12 @@ export default function StatisticsView() {
         <h1
           className="text-2xl mb-6"
           dangerouslySetInnerHTML={{
-            __html: data?.find((_, idx) => idx === 0)?.title,
+            __html: data?.results?.find((_, idx) => idx === 0)?.title,
           }}
         ></h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: data?.find((_, idx) => idx === 0)?.description,
+            __html: data?.results?.find((_, idx) => idx === 0)?.description,
           }}
         ></div>
       </Container>

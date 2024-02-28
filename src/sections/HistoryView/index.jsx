@@ -20,12 +20,12 @@ export default function HistoryView() {
         <h1
           className="text-2xl mb-6"
           dangerouslySetInnerHTML={{
-            __html: data?.find((_, index) => index === 0)?.title,
+            __html: data?.results?.find((_, index) => index === 0)?.title,
           }}
         ></h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: data?.find((_, index) => index === 0)?.description,
+            __html: data?.results?.find((_, index) => index === 0)?.description,
           }}
         ></div>
       </Container>

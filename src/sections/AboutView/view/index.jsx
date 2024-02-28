@@ -19,11 +19,11 @@ export default function AboutView() {
     <>
       <Container className="py-20">
         <h1 className="text-[32px] font-medium mb-6">
-          {data?.find((_, index) => index === 0)?.title}
+          {data?.results?.find((_, index) => index === 0)?.title}
         </h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: data?.find((_, index) => index === 0)?.description,
+            __html: data?.results?.find((_, index) => index === 0)?.description,
           }}
           className="text-lg"
         ></div>

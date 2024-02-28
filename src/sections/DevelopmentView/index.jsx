@@ -16,15 +16,15 @@ export default function DevelopmentView() {
     <>
       <Container className="py-20">
         <h1 className="text-2xl font-medium mb-8">
-          {data?.find((_, index) => index === 0)?.title ||
+          {data?.results?.find((_, index) => index === 0)?.title ||
             "Rivojlanish strategiyasi"}
         </h1>
         <div
           dangerouslySetInnerHTML={{
-            __html: data?.find((_, index) => index === 0)?.description,
+            __html: data?.results?.find((_, index) => index === 0)?.description,
           }}
         ></div>
-        {!data?.length ? (
+        {!data?.count ? (
           <>
             <p>
               Temir yo’l transporti mavjud bo’lgandan beri va faoliyati davomida
