@@ -3,9 +3,9 @@ import { getBlogList, getSingleBlog } from "../../api/blog";
 
 const initialState = {
   blogs: [],
-  loading: false,
+  loading: true,
   singleBlog: {},
-  blogLoading: false,
+  blogLoading: true,
 }
 
 const blogSlice = createSlice({
@@ -24,7 +24,7 @@ const blogSlice = createSlice({
         state.loading = false
       })
       .addCase(getSingleBlog.pending, (state) => {
-        state.blogLoading = false
+        state.blogLoading = true
       })
       .addCase(getSingleBlog.fulfilled, (state, action) => {
         state.singleBlog = action.payload

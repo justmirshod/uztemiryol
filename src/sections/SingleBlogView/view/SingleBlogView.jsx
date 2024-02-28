@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getSingleBlog } from "../../../api/blog";
 import { formatImgLink } from "../../../utils/format-image-link";
 import { formatDate } from "../../../utils/format-date";
+import Loader from "../../../components/Loader/Loader";
 
 function SingleBlogView() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function SingleBlogView() {
     dispatch(getSingleBlog(id));
   }, [id]);
 
-  if (blogLoading) return <h1>Loading</h1>;
+  if (blogLoading) return <Loader />;
   if (!singleBlog?.id) return <h1>Hech narsa topilmadi</h1>;
 
   return (
