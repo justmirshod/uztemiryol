@@ -14,13 +14,15 @@ export default function GeneralLayout() {
   const { lang } = useParams();
   const activeLang = localStorage.getItem("lang") || "uz";
 
-  console.log(lang);
-
   useEffect(() => {
     if (lang === "uz" || lang === "ru" || lang === "en") return;
     else navigate(`/${activeLang}${pathname}`, { replace: true });
     window.scrollTo({ top: 0 });
   }, [pathname]);
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
 
   return (
     <>
