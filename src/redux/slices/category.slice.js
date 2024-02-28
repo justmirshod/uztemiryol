@@ -3,7 +3,7 @@ import { getCategoryById } from "../../api/category";
 
 const initialState = {
   loading: false,
-  data: {},
+  data: [],
 };
 
 const aboutSlice = createSlice({

@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import about from "./slices/about.slice";
+import category from "./slices/category.slice";
+import managers from "./slices/managers.slice";
 
 export const store = configureStore({
-  reducer: { about },
+  reducer: { category, managers },
   devTools: process.env.NODE_ENV !== "production",
 });

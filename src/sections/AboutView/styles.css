@@ -1,0 +1,8 @@
+p, li{
+  margin: 10px 0
+}
+
+li{
+  margin-left: 2rem;
+  list-style-type: disc;
+}
