@@ -26,7 +26,9 @@ function RecentPosts() {
               <div className="post-image w-20 h-20">
                 <img
                   className="w-full h-full object-cover"
-                  src={formatImgLink(item?.images[0].image)}
+                  src={formatImgLink(
+                    item?.images?.find((_, index) => index === 0)?.image
+                  )}
                   alt=""
                 />
               </div>
