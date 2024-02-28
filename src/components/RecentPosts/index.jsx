@@ -1,50 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import { formatDate } from "../../utils/format-date";
+import { recentPosts } from "../../api/recentPost";
 
 function RecentPosts() {
-  const posts = [
-    {
-      image:
-        "https://railway.uz/upload/resize_cache/iblock/09e/1021_680_2/0a20pgihs3z8fuvjjmnga5tlg6z3fefk.jpg",
-      topic: "Afrosiyobda bo'layotgan oxirig o'zgarishlar",
-      date: "4 Fevral, 2024",
-    },
-    {
-      image:
-        "https://railway.uz/upload/resize_cache/iblock/692/1021_680_2/snn3a7f55oa1tavlxco2wtr4wcn8h9v3.jpg",
-      topic: "Afrosiyobda bo'layotgan oxirig o'zgarishlar",
-      date: "4 Fevral, 2024",
-    },
-    {
-      image:
-        "https://railway.uz/upload/resize_cache/iblock/933/1021_680_2/4tg8o33i11anguxpqefj4eskvscyut3a.jpg",
-      topic: "Afrosiyobda bo'layotgan oxirig o'zgarishlar",
-      date: "4 Fevral, 2024",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { posts, loading } = useSelector((state) => state.recentPosts);
+  useEffect(() => {
+    if (posts?.results) return;
+    dispatch(recentPosts(3));
+  }, []);
+
   const renderRecentPosts = () => {
-    return posts.map((item, index) => {
-      return (
-        <div key={index} className="flex gap-6">
-          <div>
-            <div className="post-image w-20 h-20">
-              <img
-                className="w-full h-full object-cover"
-                src={item.image}
-                alt=""
-              />
+    if (loading) return <Loader />;
+    if (!loading && !posts?.results?.length)
+      return <h1 className="text-center">Hech narsa topilmadi</h1>;
+    return posts?.results?.map((item, index) => {
+      if (index <= 2) {
+        return (
+          <div key={index} className="flex gap-6">
+            <div>
+              <div className="post-image w-20 h-20">
+                <img
+                  className="w-full h-full object-cover"
+                  src={item.image}
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="post-details">
+              <Link className="font-semibold text-[15px] hover:text-[#0459c4] transition-all duration-300 ease-out cursor-pointer">
+                {item?.title?.length > 67
+                  ? item?.title.slice(0, 30) + "..."
+                  : item?.title}
+              </Link>
+              <p className="mt-2 font-semibold text-[14px] text-[#bcbcbc]">
+                {formatDate(item?.created_at)}
+              </p>
             </div>
           </div>
-          <div className="post-details">
-            <Link className="font-semibold text-[15px] hover:text-[#0459c4] transition-all duration-300 ease-out cursor-pointer">
-              {item.topic}
-            </Link>
-            <p className="mt-2 font-semibold text-[14px] text-[#bcbcbc]">
-              {item.date}
-            </p>
-          </div>
-        </div>
-      );
+        );
+      }
     });
   };
   return (

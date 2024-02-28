@@ -11,8 +11,8 @@ function GalleryView() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getGallery());
-  }, []);
+    dispatch(getGallery({ page: +activePageIndex + 1 }));
+  }, [activePageIndex]);
 
   return (
     <Container className="py-12">
