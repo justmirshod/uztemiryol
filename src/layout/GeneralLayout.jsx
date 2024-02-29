@@ -18,7 +18,7 @@ export default function GeneralLayout() {
 
   useEffect(() => {
     if (lang === "uz" || lang === "ru" || lang === "en") return;
-    else navigate(`/${activeLang}${pathname}`, { replace: true });
+    else navigate(`/${activeLang}${pathname}`);
     window.scrollTo({ top: 0 });
   }, [pathname]);
 
