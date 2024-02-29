@@ -1,16 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Categories() {
+  const { lang, category } = useParams();
   const elements = [
     {
       icon: "fa-solid fa-envelope",
       name: "Yangiliklar",
-      link: "/uz/blog/news",
+      link: "/blog/news",
+      category: "news",
     },
     {
       icon: "fa-solid fa-image",
       name: "Galereya",
-      link: "/uz/photos",
+      link: "/photos",
     },
     {
       icon: "fa-solid fa-video",
@@ -20,12 +22,14 @@ export default function Categories() {
     {
       icon: "fa-solid fa-scroll",
       name: "E'lonlar",
-      link: "/uz/blog/announcements",
+      link: "/blog/announcements",
+      category: "announcements",
     },
     {
       icon: "fa-solid fa-money-bill",
       name: "Tenderlar",
-      link: "/uz/blog/tenders",
+      link: "/blog/tenders",
+      category: "tenders",
     },
   ];
 
@@ -33,13 +37,17 @@ export default function Categories() {
     return elements?.map((item) => {
       return (
         <Link
-          to={`${item?.link}`}
+          to={`${item?.name === "Videolar" ? "" : "/" + lang}${item?.link}`}
           className="category-item flex items-center gap-2 py-3 leading-8 border-b font-semibold hover:text-[#0459c4] border-[#e5e5e5] transition-all duration-300 ease"
         >
           <span>
             <i className={`${item?.icon} text-[#0459c4]`}></i>
           </span>
-          <p>{item?.name}</p>
+          <p
+            className={`${item?.category === category ? "text-[#0459c4]" : ""}`}
+          >
+            {item?.name}
+          </p>
         </Link>
       );
     });
