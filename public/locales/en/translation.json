@@ -1,4 +1,5 @@
 {
+  "not_found": "Not found",
   "company": {
     "name": "Temiryo'lekspress",
     "extension": "JOINT STOCK COMPANY"
@@ -69,7 +70,7 @@
   "company_informator_number": "The phone number of JSC \"Railway Express\" directory",
   "send_us_request": "Send us a request",
   "fullname": "Fullname",
-  "pnone": "Phone",
+  "phone": "Phone",
   "apply": "Your request",
   "send": "Send",
   "contact_page": {

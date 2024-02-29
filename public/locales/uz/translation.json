@@ -1,5 +1,5 @@
 {
-  "notFound": "Hech narsa topilmadi",
+  "not_found": "Hech narsa topilmadi",
   "company": {
     "name": "Temiryo'lekspress",
     "extension": "Aksiyadorlik jamiyati"
@@ -70,7 +70,7 @@
   "company_informator_number": "\"Temiryo'lekspress\" AJ ma'lumotxonasining telefon raqami",
   "send_us_request": "Bizga murojaat jo'nating",
   "fullname": "F.I.SH",
-  "pnone": "Telefon raqam",
+  "phone": "Telefon raqam",
   "apply": "Murojaatingiz",
   "send": "Yuborish",
   "contact_page": {
