@@ -9,7 +9,7 @@ export default function DevelopmentView() {
   const { data, loading } = useSelector((state) => state.category);
 
   useEffect(() => {
-    dispatch(getCategoryById(17));
+    dispatch(getCategoryById(4));
   }, []);
 
   return (

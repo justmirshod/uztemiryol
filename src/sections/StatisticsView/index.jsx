@@ -11,7 +11,7 @@ export default function StatisticsView() {
   const { data, loading } = useSelector((state) => state.category);
 
   useEffect(() => {
-    dispatch(getCategoryById(18));
+    dispatch(getCategoryById(6));
   }, []);
 
   return (

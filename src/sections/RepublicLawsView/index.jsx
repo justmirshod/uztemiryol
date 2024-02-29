@@ -2,6 +2,7 @@ import Container from "../../components/Container";
 
 import { flex } from "../../classes";
 import { defineFileExtensionImg } from "../../utils/files";
+import { useDispatch } from "react-redux";
 
 const laws = [
   {
@@ -23,6 +24,14 @@ const laws = [
 ];
 
 export default function RepublicLawsView() {
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategoryById(29));
+  }, []);
+
   return (
     <Container className="py-20">
       <h1 className="text-[24px] font-semibold mb-8">

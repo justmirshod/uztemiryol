@@ -11,7 +11,7 @@ export default function HistoryView() {
   const { data, loading } = useSelector((state) => state.category);
 
   useEffect(() => {
-    dispatch(getCategoryById(2));
+    dispatch(getCategoryById(5));
   }, []);
 
   return (

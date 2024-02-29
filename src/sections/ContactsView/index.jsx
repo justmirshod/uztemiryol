@@ -2,9 +2,18 @@ import { useTranslation } from "react-i18next";
 import { flex } from "../../classes";
 import Container from "../../components/Container";
 import GeneralMap from "../../components/Map";
+import { useDispatch } from "react-redux";
 
 export default function ContactsView() {
   const { t } = useTranslation();
+
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategoryById(8));
+  }, []);
 
   const contactDetails = [
     {

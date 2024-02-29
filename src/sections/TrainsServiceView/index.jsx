@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Container from "../../components/Container";
+import { useDispatch } from "react-redux";
 
 const services = [
   {
@@ -40,6 +41,13 @@ const services = [
 
 export default function TrainsServiceView() {
   const [activeType, setActiveType] = useState("free");
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategoryById(20));
+  }, []);
 
   const activeTypeServices = useMemo(() => {
     return services?.find((item) => item?.type === activeType)?.service;

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { flex } from "../../classes";
 import Container from "../../components/Container";
 import { defineFileExtensionImg } from "../../utils/files";
+import { useDispatch } from "react-redux";
 
 const plans = [
   {
@@ -23,6 +24,14 @@ const plans = [
 ];
 
 export default function BussinesPlanView() {
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategoryById(31));
+  }, []);
+
   return (
     <Container className="py-20">
       <h1 className="text-[32px] font-semibold mb-16">Biznes reja</h1>

@@ -12,7 +12,7 @@ export default function AboutView() {
   const { data, loading } = useSelector((state) => state.category);
 
   useEffect(() => {
-    dispatch(getCategoryById(1));
+    dispatch(getCategoryById(2));
   }, []);
 
   return (
