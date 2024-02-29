@@ -12,9 +12,10 @@ import facebook_icon from "../../assets/icons/facebook.png";
 //classes
 import { flex } from "../../classes";
 import SubHeader from "./SubHeader";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import UpHeader from "./UpHeader";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "../../router/hooks/use-router";
 
 //address links
 const addressLinks = [
@@ -52,10 +53,12 @@ const mediaLinks = [
   },
 ];
 
-const siteLangs = ["UZ", "RU", "EN"];
+const siteLangs = ["uz", "ru", "en"];
 
 export default function Header() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { pathname } = useLocation();
+  const router = useRouter();
 
   return (
     <>
@@ -105,16 +108,17 @@ export default function Header() {
                   ))}
                 </div>
                 <div className={`search-and-langs ${flex.alignCenter}`}>
-                  {/* <img
-                src={search_icon}
-                width="30px"
-                height="30px"
-                className="mr-4"
-                alt=""
-              /> */}
                   {siteLangs.map((lang, index) => (
                     <span
-                      className="uppercase font-semibold mr-2 text-white"
+                      className="uppercase font-semibold mr-2 text-white cursor-pointer"
+                      onClick={() => {
+                        i18n.changeLanguage(lang);
+                        const routeWithoutLang = pathname.split("/");
+                        routeWithoutLang.splice(1, 1, lang);
+                        const newRoute = routeWithoutLang.join("/");
+                        router.replace(newRoute);
+                        router.reload();
+                      }}
                       key={index}
                     >
                       {lang}
