@@ -4,7 +4,7 @@ import map_bg from "../../assets/images/map.jpg";
 
 export default function MapView() {
   return (
-    <Container>
+    <Container className="py-20">
       <h1 className="text-2xl font-semibold mb-8">
         O'zbekiston Respublikasi temir yo'l chizmasi
       </h1>
