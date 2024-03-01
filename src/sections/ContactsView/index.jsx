@@ -2,7 +2,9 @@ import { useTranslation } from "react-i18next";
 import { flex } from "../../classes";
 import Container from "../../components/Container";
 import GeneralMap from "../../components/Map";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCategoryById } from "../../api/category";
 
 export default function ContactsView() {
   const { t } = useTranslation();

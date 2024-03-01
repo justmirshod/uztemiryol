@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import Container from "../../components/Container";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCategoryById } from "../../api/category";
 
 export default function OnlineReceptionView() {
   const { t } = useTranslation();

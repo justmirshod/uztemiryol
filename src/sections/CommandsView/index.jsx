@@ -1,5 +1,7 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Container from "../../components/Container";
+import { getCategoryById } from "../../api/category";
+import { useEffect } from "react";
 
 export default function CommandsView() {
   const dispatch = useDispatch();

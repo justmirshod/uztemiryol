@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import { flex } from "../../classes";
 import Container from "../../components/Container";
 import { defineFileExtensionImg } from "../../utils/files";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCategoryById } from "../../api/category";
 
 const plans = [
   {

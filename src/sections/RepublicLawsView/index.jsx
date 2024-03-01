@@ -2,7 +2,9 @@ import Container from "../../components/Container";
 
 import { flex } from "../../classes";
 import { defineFileExtensionImg } from "../../utils/files";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCategoryById } from "../../api/category";
 
 const laws = [
   {

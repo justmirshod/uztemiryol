@@ -82,7 +82,7 @@ export default function Header() {
                 </div>
               </Link>
             </div>
-            <div className={`main-part w-[65%]`}>
+            <div className={`main-part w-[70%]`}>
               <div
                 className={`${flex.alignCenter} justify-between pb-4 border-b`}
               >
@@ -90,7 +90,9 @@ export default function Header() {
                   {addressLinks?.map((item, index) => (
                     <div className={`${flex.alignCenter} mr-4`} key={index}>
                       <i className={`${item?.icon} text-white text-5`}></i>
-                      <span className="ml-1 text-white">{item?.title}</span>
+                      <span className="ml-1 text-white text-sm">
+                        {item?.title}
+                      </span>
                     </div>
                   ))}
                 </div>
