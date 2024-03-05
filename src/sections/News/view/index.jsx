@@ -14,15 +14,15 @@ function NewsView() {
   const categoryId = [
     {
       name: "news",
-      id: 10,
+      id: 13,
     },
     {
       name: "tenders",
-      id: 19,
+      id: 14,
     },
     {
       name: "announcements",
-      id: 12,
+      id: 17,
     },
   ];
 

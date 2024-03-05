@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Container from "../../components/Container";
 import YouTubePopUp from "../../components/YoutubePopUp";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 function VideTour() {
+  const { lang } = useParams();
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const openVideoPopup = () => {
@@ -16,7 +20,9 @@ function VideTour() {
     <div className="bg-gray-500/80">
       <Container>
         <div className="flex h-[400px] w-1/2 m-auto items-center justify-between text-[30px]">
-          <p className="text-white">Tashkilot bo'ylab</p>
+          <p className="text-white">
+            {lang === "en" || lang === "ru" ? t("tour") : t("thorugh_company")}
+          </p>
           <div>
             <i
               onClick={openVideoPopup}
@@ -34,7 +40,9 @@ function VideTour() {
               )}
             </>
           </div>
-          <p className="text-white">Sayohat</p>
+          <p className="text-white">
+            {lang === "en" || lang === "ru" ? t("thorugh_company") : t("tour")}
+          </p>
         </div>
       </Container>
     </div>

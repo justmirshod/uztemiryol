@@ -8,191 +8,185 @@ import telegram_icon from "../../assets/icons/telegram.png";
 import youtube_icon from "../../assets/icons/youtube.png";
 import facebook_icon from "../../assets/icons/facebook.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
   const siteRoutes = [
     {
-      title: "Biz haqimizda",
+      title: t("about_us"),
       routes: [
         {
-          name: `"Temiryo'lyo'lovchi" haqida`,
+          name: t("about_company"),
           link: `/${activeLang}/about_us`,
         },
         {
-          name: "Rahbariyat",
+          name: t("managers"),
           link: `/${activeLang}/managers`,
         },
         {
-          name: "Rivojlanish strategiyasi",
+          name: t("dev_strategy"),
           link: `/${activeLang}/development_strategy`,
         },
         {
-          name: "Tarix",
+          name: t("history"),
           link: `/${activeLang}/history`,
         },
         {
-          name: "Statistik ma'lumot",
+          name: t("statistics"),
           link: `/${activeLang}/statistics`,
         },
         {
-          name: "Ish o'rinlari",
+          name: t("vacancies"),
           link: `/${activeLang}/vacancies`,
         },
         {
-          name: "Bog'lanish",
+          name: t("contact"),
           link: `/${activeLang}/communications`,
         },
         {
-          name: "Fuqarolar murojaati",
+          name: t("citizen_appeal"),
           link: `/${activeLang}/citizen_appeal`,
         },
         {
-          name: "Onlayn qabulxona",
+          name: t("online_reception"),
           link: `/${activeLang}/online_reception`,
-        },
-        {
-          name: `"Temiryo'leksress" AJ ma'lumotxonasining telefon raqami`,
-          link: `/${activeLang}/company-contact`,
         },
       ],
     },
     {
-      title: "Matbuot markazi",
+      title: t("media_center"),
       routes: [
         {
-          name: `Yangiliklar`,
+          name: t(`news`),
           link: `/${activeLang}/news`,
         },
         {
-          name: "Tenderlar",
+          name: t("tenders"),
           link: `/${activeLang}/tenders`,
         },
         {
-          name: "Fotogalereya",
+          name: t("galery"),
           link: `/${activeLang}/photos`,
         },
         {
-          name: "Videolar",
+          name: t("videos"),
           link: `/${activeLang}/videos`,
         },
         {
-          name: "E'lonlar",
+          name: t("ads"),
           link: `/${activeLang}/announcements`,
         },
       ],
     },
     {
-      title: "Xarita",
+      title: t("map"),
       routes: [],
       link: `/${activeLang}/map`,
     },
     {
-      title: "Jadval",
+      title: t("scheduleIndex"),
       routes: [
         {
-          name: `Yuqori tezlikda harakatlanadigan "Afrosiyob" elektropoyezdining qatnovlar jadvali`,
+          name: t("schedule"),
           link: `/${activeLang}/schedule`,
         },
       ],
     },
     {
-      title: "Chipta sotish",
+      title: t("ticket_sell"),
       routes: [],
       link: `https://eticket.railway.uz`,
     },
     {
-      title: "Xizmatlar",
+      title: t("services"),
       routes: [
         {
-          name: "Yo'lovchi poyezdlar",
+          name: t("trains"),
           link: `/${activeLang}/trains`,
         },
         {
-          name: "Reklama xizmatlari",
+          name: t("ad_services"),
           link: `/${activeLang}/ad_services`,
         },
         {
-          name: "Davlat xizmatlari",
+          name: t("state_services"),
           link: `/${activeLang}/public_services`,
         },
         {
-          name: " Elektron chiptani qanday harid qilish mumkin?",
+          name: t("how_to_buy_ticket"),
           link: `/${activeLang}/ticket_buy_instruction`,
         },
         {
-          name: "Elektron chiptani qanday qaytarish kerak?",
+          name: t("how_to_return_ticket"),
           link: `/${activeLang}/ticket_return_instruction`,
         },
       ],
     },
     {
-      title: "Qonunlar",
+      title: t("laws"),
       routes: [
         {
-          name: "Temiryo'l transporti haqida qonun",
+          name: t("railway_transportation_law"),
           link: `/${activeLang}/railway_transportation_law`,
         },
         {
-          name: "Farmoishlar",
+          name: t("commands"),
           link: `/${activeLang}/commands`,
         },
         {
-          name: "Qarorlar",
+          name: t("decisions"),
           link: `/${activeLang}/desicions`,
         },
         {
-          name: "O'zbekiston Respublikasi Qonunlari",
+          name: t("laws_of_republic"),
           link: `/${activeLang}/laws_of_republic`,
         },
       ],
     },
     {
-      title: "Korporativ boshqaruv",
+      title: t("corporate_governance"),
       routes: [
         {
-          name: "Jamiyat ustavi",
+          name: t("society_charter"),
           link: `/${activeLang}/society_charter`,
         },
         {
-          name: "Biznes reja",
+          name: t("bussines_plan"),
           link: `/${activeLang}/bussines_plan`,
         },
         {
-          name: "Kuzatuv kengashi a'zolari tarkibi",
+          name: t("supervisory_board"),
           link: `/${activeLang}/supervisory_board`,
         },
         {
-          name: "Choraklik va yillik hisobotlar",
+          name: t("reports"),
           link: `/${activeLang}/reports`,
         },
         {
-          name: "Taftish komissiyasi tarkibi",
+          name: t("inspection"),
           link: `/${activeLang}/inspection`,
         },
         {
-          name: "Ichki audit xizmati",
+          name: t("internal_audit"),
           link: `/${activeLang}/internal_audit`,
         },
         {
-          name: "Ichki hujjatlar",
+          name: t("internal_docs"),
           link: `/${activeLang}/internal_documents`,
         },
         {
-          name: "Tashqi audit xulosasi",
+          name: t("external_audit"),
           link: `/${activeLang}/external_audit_conclusion`,
-        },
-        {
-          name: "Kol markaz",
-          link: `/${activeLang}/call_center`,
         },
       ],
     },
   ];
 
   const renderSubRoutesOfMainRoute = (mainRoute) => {
-    return siteRoutes?.find((item) => item.title === mainRoute).routes;
+    return siteRoutes.find((item) => item.title === mainRoute)?.routes;
   };
 
   return (
@@ -205,7 +199,7 @@ export default function Footer() {
               <h1 className="text-xl font-semibold ml-2 text-white">
                 O'ztemiryo'lyo'lovchi{" "}
                 <p className="font-medium text-base text-white">
-                  Aksiyadorlik jamiyati
+                  {t("company.extension")}
                 </p>
               </h1>
             </div>
@@ -244,9 +238,9 @@ export default function Footer() {
           <div className="col-span-3 flex flex-col">
             <div>
               <p className="text-lg font-semibold mb-3 text-white">
-                Biz haqimizda
+                {t("about_us")}
               </p>
-              {renderSubRoutesOfMainRoute("Biz haqimizda")?.map(
+              {renderSubRoutesOfMainRoute(t("about_us"))?.map(
                 (route, index) => (
                   <Link
                     to={route?.link}
@@ -259,40 +253,10 @@ export default function Footer() {
               )}
             </div>
             <div className="mt-4">
-              <p className="text-lg font-semibold mb-3 text-white">Jadval</p>
-              {renderSubRoutesOfMainRoute("Jadval")?.map((item, index) => (
-                <Link
-                  to={item?.link}
-                  key={index}
-                  className="block mb-2 hover:text-blue-700 text-white"
-                >
-                  {item?.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="col-span-3 flex flex-col">
-            <div>
               <p className="text-lg font-semibold mb-3 text-white">
-                Matbuot markazi
+                {t("scheduleIndex")}
               </p>
-              {renderSubRoutesOfMainRoute("Matbuot markazi")?.map(
-                (item, index) => (
-                  <Link
-                    to={item?.link}
-                    key={index}
-                    className="block mb-2 hover:text-blue-700 text-white"
-                  >
-                    {item?.name}
-                  </Link>
-                )
-              )}
-            </div>
-            <div className="mt-4">
-              <p className="text-lg font-semibold mb-3 text-white">
-                Korporativ boshqaruv
-              </p>
-              {renderSubRoutesOfMainRoute("Korporativ boshqaruv")?.map(
+              {renderSubRoutesOfMainRoute(t("scheduleIndex"))?.map(
                 (item, index) => (
                   <Link
                     to={item?.link}
@@ -307,8 +271,44 @@ export default function Footer() {
           </div>
           <div className="col-span-3 flex flex-col">
             <div>
-              <p className="text-lg font-semibold mb-3 text-white">Xizmatlar</p>
-              {renderSubRoutesOfMainRoute("Xizmatlar")?.map((item, index) => (
+              <p className="text-lg font-semibold mb-3 text-white">
+                {t("media_center")}
+              </p>
+              {renderSubRoutesOfMainRoute(t("media_center"))?.map(
+                (item, index) => (
+                  <Link
+                    to={item?.link}
+                    key={index}
+                    className="block mb-2 hover:text-blue-700 text-white"
+                  >
+                    {item?.name}
+                  </Link>
+                )
+              )}
+            </div>
+            <div className="mt-4">
+              <p className="text-lg font-semibold mb-3 text-white">
+                {t("corporate_governance")}
+              </p>
+              {renderSubRoutesOfMainRoute(t("corporate_governance"))?.map(
+                (item, index) => (
+                  <Link
+                    to={item?.link}
+                    key={index}
+                    className="block mb-2 hover:text-blue-700 text-white"
+                  >
+                    {item?.name}
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+          <div className="col-span-3 flex flex-col">
+            <div>
+              <p className="text-lg font-semibold mb-3 text-white">
+                {t("services")}
+              </p>
+              {renderSubRoutesOfMainRoute(t("services"))?.map((item, index) => (
                 <Link
                   to={item?.link}
                   key={index}
@@ -319,8 +319,10 @@ export default function Footer() {
               ))}
             </div>
             <div className="mt-4">
-              <p className="text-lg font-semibold mb-3 text-white">Qonunlar</p>
-              {renderSubRoutesOfMainRoute("Qonunlar")?.map((item, index) => (
+              <p className="text-lg font-semibold mb-3 text-white">
+                {t("laws")}
+              </p>
+              {renderSubRoutesOfMainRoute(t("laws"))?.map((item, index) => (
                 <Link
                   to={item?.link}
                   key={index}
@@ -332,17 +334,8 @@ export default function Footer() {
             </div>
             <div className="mt-4">
               <p className="text-lg font-semibold mb-3 hover:text-blue-700 cursor-pointer text-white">
-                Xarita
+                {t("map")}
               </p>
-              {renderSubRoutesOfMainRoute("Xarita")?.map((item, index) => (
-                <Link
-                  to={item?.link}
-                  key={index}
-                  className="block mb-2 hover:text-blue-700 text-white"
-                >
-                  {item?.name}
-                </Link>
-              ))}
             </div>
             <div className="mt-4">
               <Link
@@ -350,17 +343,8 @@ export default function Footer() {
                 target="_blank"
                 className="text-lg font-semibold mb-3 hover:text-blue-700 cursor-pointer text-white"
               >
-                Chipta sotish
+                {t("ticket_sell")}
               </Link>
-              {renderSubRoutesOfMainRoute("Xarita")?.map((item, index) => (
-                <Link
-                  to={item?.link}
-                  key={index}
-                  className="block mb-2 hover:text-blue-700 text-white"
-                >
-                  {item?.name}
-                </Link>
-              ))}
             </div>
             {/* <div className="mt-4">
               <p className="text-lg font-semibold mb-3">Jadval</p>

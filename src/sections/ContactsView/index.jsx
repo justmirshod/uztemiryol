@@ -1,45 +1,59 @@
+import { useTranslation } from "react-i18next";
 import { flex } from "../../classes";
 import Container from "../../components/Container";
 import GeneralMap from "../../components/Map";
-
-const contactDetails = [
-  {
-    title: "Murojaat uchun telefon",
-    detail: "1005",
-  },
-  {
-    title: "Faks",
-    detail: "+998 (71) 237-86-36",
-  },
-  {
-    title: "Elektron pochta",
-    detail: "uzexpress@info.uz",
-  },
-];
-
-const contactWithManagers = [
-  {
-    role: "Bosh direktor",
-    days: ["Dushanba"],
-    time: "16:00 - 17:00",
-  },
-  {
-    role: "Ishlab chiqarish va texnik rivojlantirish bo'yicha direktor",
-    days: ["Dushanba", "Chorshanba"],
-    time: "16:00 - 17:00",
-  },
-  {
-    role: "Marketing, sotuvlar va servis xizmatlari bo'yicha direktor",
-    days: ["Seshanba", "Payshanba"],
-    time: "16:00 - 17:00",
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCategoryById } from "../../api/category";
 
 export default function ContactsView() {
+  const { t } = useTranslation();
+
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategoryById(8));
+  }, []);
+
+  const contactDetails = [
+    {
+      title: t("phone_for_apply"),
+      detail: "1005",
+    },
+    {
+      title: t("fax"),
+      detail: "+998 (71) 237-86-36",
+    },
+    {
+      title: t("email"),
+      detail: "uzexpress@info.uz",
+    },
+  ];
+
+  const contactWithManagers = [
+    {
+      role: t("head_director"),
+      days: ["Dushanba"],
+      time: "16:00 - 17:00",
+    },
+    {
+      role: t("producing_director"),
+      days: ["Dushanba", "Chorshanba"],
+      time: "16:00 - 17:00",
+    },
+    {
+      role: t("marketing_director"),
+      days: ["Seshanba", "Payshanba"],
+      time: "16:00 - 17:00",
+    },
+  ];
+
   return (
     <>
       <Container className="pt-20 pb-32">
-        <h1 className="text-[32px] mb-6">Bog'lanish</h1>
+        <h1 className="text-[32px] mb-6">{t("contact")}</h1>
         <div className="grid grid-cols-3 gap-20">
           {contactDetails?.map((item, index) => (
             <div
@@ -51,7 +65,7 @@ export default function ContactsView() {
           ))}
         </div>{" "}
         <h1 className="text-center text-[#336699] text-2xl mb-10 mt-20">
-          "O'ztemiryo'lyo'lovchi" AJ rahbariyatining qabul kunlari
+          {t("apply_dates")}
         </h1>
         <div className="grid grid-cols-3 rounded-2xl shadow-custom1">
           {contactWithManagers?.map((item, index, arr) => (
@@ -63,14 +77,16 @@ export default function ContactsView() {
             >
               <p className="text-lg font-medium mb-2">{item?.role}</p>
               <p className="font-medium mb-2 py-3">
-                Kun: {item?.days?.join(" va ")}
+                {t("day")}: {item?.days?.join(" va ")}
               </p>
-              <p className="font-medium mb-2">Soat: {item?.time}</p>
+              <p className="font-medium mb-2">
+                {t("time")}: {item?.time}
+              </p>
             </div>
           ))}
         </div>
         <p className="text-xl mt-10 mb-32">
-          "Temiryo'lekspress" AJ ma'lumotxonasining telefon raqami:{" "}
+          {t("apply_dates")}
           <span className="font-medium inline-block ml-4">
             {" "}
             +998 (99) 211-35-26
@@ -78,11 +94,11 @@ export default function ContactsView() {
         </p>
         <div className="grid grid-cols-3 p-10 bg-white shadow-custom1 rounded-xl mt-10 gap-24">
           <div className="col-span-1">
-            <h1 className="text-2xl font-normal">Bizga murojaat jo'nating</h1>
+            <h1 className="text-2xl font-normal">{t("send_us_request")}</h1>
             <form action="" className="mt-6">
               <div className="mb-8">
                 <label htmlFor="name" className="block mb-2 text-lg">
-                  F.I.SH
+                  {t("fullname")}
                 </label>
                 <input
                   type="text"
@@ -91,7 +107,7 @@ export default function ContactsView() {
               </div>
               <div className="mb-8">
                 <label htmlFor="email" className="block mb-2 text-lg">
-                  Telefon raqamingiz
+                  {t("phone")}
                 </label>
                 <input
                   type="number"
@@ -100,7 +116,7 @@ export default function ContactsView() {
               </div>
               <div className="mb-8">
                 <label htmlFor="email" className="block mb-2 text-lg">
-                  Murojaatingiz
+                  {t("apply")}
                 </label>
                 <textarea
                   type="email"
@@ -109,7 +125,7 @@ export default function ContactsView() {
                 />
               </div>
               <button className="px-10 py-2 rounded-lg bg-blue-700 hover:bg-blue-500 text-white uppercase duration-150">
-                Yuborish
+                {t("send")}
               </button>
             </form>
           </div>

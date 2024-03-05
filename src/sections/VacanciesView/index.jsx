@@ -1,5 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Container from "../../components/Container";
+import { useDispatch, useSelector } from "react-redux";
+import { getCategoryById } from "../../api/category";
 
 const vacancies = [
   {
@@ -38,6 +40,14 @@ const vacancies = [
 ];
 
 export default function VancanciesView() {
+  const dispatch = useDispatch();
+
+  const { data, loading } = useSelector((state) => state.category);
+
+  useEffect(() => {
+    dispatch(getCategoryById(7));
+  }, []);
+
   return (
     <>
       <Container className="py-20">

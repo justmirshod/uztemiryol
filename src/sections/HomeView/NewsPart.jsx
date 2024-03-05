@@ -26,7 +26,7 @@ export default function NewsPart() {
   const renderPosts = () => {
     if (loading) return <Loader />;
     if (!loading && !posts?.results?.length)
-      return <h1 className="text-center">Hech narsa topilmadi</h1>;
+      return <h1 className="text-center">{t("not_found")}</h1>;
 
     return posts?.results?.map((item, index) => (
       <div

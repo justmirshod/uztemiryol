@@ -31,10 +31,13 @@ import Inspection from "../pages/Inspection";
 import InternalAudit from "../pages/InternalAudit";
 import InternalDocs from "../pages/InternalDocs";
 import ExternalAudit from "../pages/ExternalAudit";
+import RailwayMap from "../pages/RailwayMap";
 export default function Router() {
+  const activeLang = localStorage.getItem("i18nextLng") || "uz";
+
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/uz" />} />
+      <Route path="/" element={<Navigate to={`/${activeLang}`} />} />
       <Route path={`:lang/`} element={<GeneralLayout />}>
         <Route index element={<Home />} />
         <Route path="about_us" element={<About />} />
@@ -77,6 +80,7 @@ export default function Router() {
         <Route path="internal_audit" element={<InternalAudit />} />
         <Route path="internal_documents" element={<InternalDocs />} />
         <Route path="external_audit_conclusion" element={<ExternalAudit />} />
+        <Route path="map" element={<RailwayMap />} />
       </Route>
     </Routes>
   );

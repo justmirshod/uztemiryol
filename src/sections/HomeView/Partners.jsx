@@ -25,7 +25,7 @@ export default function Partners() {
           <div className="w-full h-full flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 497.6 116.7"
             >
               <path
@@ -52,7 +52,7 @@ export default function Partners() {
           <div className="w-full h-full flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 497.6 116.7"
             >
               <path
@@ -79,7 +79,7 @@ export default function Partners() {
           <div className="w-full h-full flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 497.6 116.7"
             >
               <path
@@ -106,7 +106,7 @@ export default function Partners() {
           <div className="w-full h-full flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 497.6 116.7"
             >
               <path

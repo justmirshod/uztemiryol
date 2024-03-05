@@ -83,10 +83,10 @@ export default function SubHeader() {
       link: `/${activeLang}/map`,
     },
     {
-      title: t("schedule"),
+      title: t("scheduleIndex"),
       routes: [
         {
-          name: `Yuqori tezlikda harakatlanadigan "Afrosiyob" elektropoyezdining qatnovlar jadvali`,
+          name: t("schedule"),
           link: `/${activeLang}/schedule`,
         },
       ],
