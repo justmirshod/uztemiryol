@@ -1,2 +1,3 @@
-const API_URL = "https://e9c0-213-230-125-170.ngrok-free.app";
+const activeLang = localStorage.getItem("i18nextLng")
+const API_URL = `https://back.utyexpress.uz/${activeLang}`;
 export { API_URL };
