@@ -30,10 +30,6 @@ function SingleBlogView() {
           {formatDate(singleBlog?.created_at)}
         </p>
       </div>
-      <img
-        src="https://e9c0-213-230-125-170.ngrok-free.app/media/images/contents/9iio913oqtpg3uif8on0q2sw2yjch769.jpg"
-        alt="sa"
-      />
       <p className="blog-title font-bold text-[2rem] text-[#212121]">
         {singleBlog?.title}
       </p>
