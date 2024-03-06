@@ -100,31 +100,31 @@ export default function Footer() {
       routes: [],
       link: `https://eticket.railway.uz`,
     },
-    {
-      title: t("services"),
-      routes: [
-        {
-          name: t("trains"),
-          link: `/${activeLang}/trains`,
-        },
-        {
-          name: t("ad_services"),
-          link: `/${activeLang}/ad_services`,
-        },
-        {
-          name: t("state_services"),
-          link: `/${activeLang}/public_services`,
-        },
-        {
-          name: t("how_to_buy_ticket"),
-          link: `/${activeLang}/ticket_buy_instruction`,
-        },
-        {
-          name: t("how_to_return_ticket"),
-          link: `/${activeLang}/ticket_return_instruction`,
-        },
-      ],
-    },
+    // {
+    //   title: t("services"),
+    //   routes: [
+    //     {
+    //       name: t("trains"),
+    //       link: `/${activeLang}/trains`,
+    //     },
+    //     {
+    //       name: t("ad_services"),
+    //       link: `/${activeLang}/ad_services`,
+    //     },
+    //     {
+    //       name: t("state_services"),
+    //       link: `/${activeLang}/public_services`,
+    //     },
+    //     {
+    //       name: t("how_to_buy_ticket"),
+    //       link: `/${activeLang}/ticket_buy_instruction`,
+    //     },
+    //     {
+    //       name: t("how_to_return_ticket"),
+    //       link: `/${activeLang}/ticket_return_instruction`,
+    //     },
+    //   ],
+    // },
     {
       title: t("laws"),
       routes: [
@@ -197,7 +197,7 @@ export default function Footer() {
             <div className={`${flex.alignCenter}`}>
               <Logo className="w-[83px] h-[96px]" />
               <h1 className="text-xl font-semibold ml-2 text-white">
-                O'ztemiryo'lyo'lovchi{" "}
+                Temiryo'lekspress{" "}
                 <p className="font-medium text-base text-white">
                   {t("company.extension")}
                 </p>
@@ -304,7 +304,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-span-3 flex flex-col">
-            <div>
+            {/* <div>
               <p className="text-lg font-semibold mb-3 text-white">
                 {t("services")}
               </p>
@@ -317,7 +317,7 @@ export default function Footer() {
                   {item?.name}
                 </Link>
               ))}
-            </div>
+            </div> */}
             <div className="mt-4">
               <p className="text-lg font-semibold mb-3 text-white">
                 {t("laws")}

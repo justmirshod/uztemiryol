@@ -96,31 +96,31 @@ export default function SubHeader() {
       routes: [],
       link: `https://eticket.railway.uz`,
     },
-    {
-      title: t("services"),
-      routes: [
-        {
-          name: t("trains"),
-          link: `/${activeLang}/trains`,
-        },
-        {
-          name: t("ad_services"),
-          link: `/${activeLang}/ad_services`,
-        },
-        {
-          name: t("state_services"),
-          link: `https://my.gov.uz`,
-        },
-        {
-          name: t("how_to_buy_ticket"),
-          link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-buy`,
-        },
-        {
-          name: t("how_to_return_ticket"),
-          link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-return`,
-        },
-      ],
-    },
+    // {
+    //   title: t("services"),
+    //   routes: [
+    //     {
+    //       name: t("trains"),
+    //       link: `/${activeLang}/trains`,
+    //     },
+    //     {
+    //       name: t("ad_services"),
+    //       link: `/${activeLang}/ad_services`,
+    //     },
+    //     {
+    //       name: t("state_services"),
+    //       link: `https://my.gov.uz`,
+    //     },
+    //     {
+    //       name: t("how_to_buy_ticket"),
+    //       link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-buy`,
+    //     },
+    //     {
+    //       name: t("how_to_return_ticket"),
+    //       link: `https://chipta.railway.uz/${activeLang}/pages/how-tu-return`,
+    //     },
+    //   ],
+    // },
     {
       title: t("laws"),
       routes: [
