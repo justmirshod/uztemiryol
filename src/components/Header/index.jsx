@@ -71,7 +71,7 @@ export default function Header() {
           <div className={`${flex.alignCenter} justify-between`}>
             <div className={`logo-part w-1/5 ${flex.alignCenter}`}>
               <Link to="/" className={flex.alignCenter}>
-                <Logo className="w-[80px] h-[96px] cursor-pointer" />
+                <Logo className="w-[120px] cursor-pointer" />
                 <div className="ml-3">
                   <h1 className="text-xl uppercase mb-1 font-medium text-white">
                     {t("company.name")}
