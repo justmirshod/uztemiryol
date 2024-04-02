@@ -6,10 +6,13 @@ import { formatImgLink } from "../../../utils/format-image-link";
 import { formatDate } from "../../../utils/format-date";
 import Loader from "../../../components/Loader/Loader";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import "../index.css";
 
 function SingleBlogView() {
   const { id } = useParams();
@@ -27,7 +30,7 @@ function SingleBlogView() {
     <section className="blog-image">
       <div className="img-box">
         {singleBlog?.images?.length ? (
-          <Swiper modules={[Navigation]} navigation={true}>
+          <Swiper modules={[Navigation, Pagination]} pagination={true}>
             {singleBlog?.images?.map((item) => (
               <SwiperSlide>
                 <img
