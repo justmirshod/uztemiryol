@@ -14,7 +14,7 @@ function NewsView() {
   const categoryId = [
     {
       name: "news",
-      id: 13,
+      id: 10,
     },
     {
       name: "tenders",

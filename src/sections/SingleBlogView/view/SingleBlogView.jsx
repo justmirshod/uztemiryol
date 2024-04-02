@@ -5,6 +5,11 @@ import { getSingleBlog } from "../../../api/blog";
 import { formatImgLink } from "../../../utils/format-image-link";
 import { formatDate } from "../../../utils/format-date";
 import Loader from "../../../components/Loader/Loader";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 function SingleBlogView() {
   const { id } = useParams();
@@ -22,7 +27,20 @@ function SingleBlogView() {
     <section className="blog-image">
       <div className="img-box">
         {singleBlog?.images?.length ? (
-          <img src={formatImgLink(singleBlog?.images[0].image)} alt="" />
+          <Swiper modules={[Navigation]} navigation={true}>
+            {singleBlog?.images?.map((item) => (
+              <SwiperSlide>
+                <img
+                  src={
+                    "https://storage.kun.uz/source/thumbnails/_medium/10/RkzPKmsBaKlVFz5ZIozRtkEJTrb1HF7l_medium.jpg" ||
+                    formatImgLink(singleBlog?.images[0].image)
+                  }
+                  alt=""
+                  className="border w-full"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         ) : null}
       </div>
       <div className="meta-details mt-8">
