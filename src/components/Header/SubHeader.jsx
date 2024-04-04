@@ -87,7 +87,7 @@ export default function SubHeader() {
       routes: [
         {
           name: t("schedule"),
-          link: `/${activeLang}/schedule`,
+          link: `https://eticket.railway.uz/${activeLang}/pages/schedule`,
         },
       ],
     },

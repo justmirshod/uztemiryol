@@ -31,7 +31,7 @@ function VideTour() {
             <>
               {isOpen ? (
                 <YouTubePopUp
-                  videoId="7o3K-f6vR2A"
+                  videoId="OHy6FfAuFR0"
                   isOpen={isOpen}
                   onClose={closeVideoPopup}
                 />
