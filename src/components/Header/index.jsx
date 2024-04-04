@@ -37,7 +37,7 @@ const addressLinks = [
 const mediaLinks = [
   {
     icon: instagram_icon,
-    link: "https://www.instagram.com/uzrailwayexpress?igsh=MzRlODBiNWFlZA==",
+    link: "https://www.instagram.com/afrosiyobexpress",
   },
   {
     icon: telegram_icon,

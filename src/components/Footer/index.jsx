@@ -195,7 +195,7 @@ export default function Footer() {
         <div className={`grid grid-cols-12 gap-24 py-20`}>
           <div className="col-span-3 flex flex-col">
             <div className={`${flex.alignCenter}`}>
-              <Logo className="w-[83px] h-[96px]" />  
+              <Logo className="w-[83px] h-[96px]" />
               <h1 className="text-xl font-semibold ml-2 text-white">
                 Temiryo'lekspress{" "}
                 <p className="font-medium text-base text-white">
@@ -222,7 +222,7 @@ export default function Footer() {
                 <img src={telegram_icon} className="w-8 h-8 mr-3" alt="" />
               </a>
               <a
-                href="https://www.instagram.com/uzrailwayexpress?igsh=MzRlODBiNWFlZA=="
+                href="https://www.instagram.com/afrosiyobexpress"
                 target="_blank"
               >
                 <img src={instagram_icon} className="w-8 h-8 mr-3" alt="" />
