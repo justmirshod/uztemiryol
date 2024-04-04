@@ -34,10 +34,7 @@ function SingleBlogView() {
             {singleBlog?.images?.map((item) => (
               <SwiperSlide>
                 <img
-                  src={
-                    "https://storage.kun.uz/source/thumbnails/_medium/10/RkzPKmsBaKlVFz5ZIozRtkEJTrb1HF7l_medium.jpg" ||
-                    formatImgLink(singleBlog?.images[0].image)
-                  }
+                  src={formatImgLink(item?.image)}
                   alt=""
                   className="border w-full"
                 />
