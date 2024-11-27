@@ -15,7 +15,7 @@ export default {
       },
     },
     container: {
-      padding: "2rem",
+      padding: 8,
       screens: {
         sm: "640px",
         md: "768px",

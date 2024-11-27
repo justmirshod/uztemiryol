@@ -15,6 +15,10 @@ export default function SubHeader() {
       title: t("about_us"),
       routes: [
         {
+          name: t("history"),
+          link: `/${activeLang}/history`,
+        },
+        {
           name: t("about_company"),
           link: `/${activeLang}/about_us`,
         },
@@ -27,21 +31,13 @@ export default function SubHeader() {
           link: `/${activeLang}/development_strategy`,
         },
         {
-          name: t("history"),
-          link: `/${activeLang}/history`,
-        },
-        {
           name: t("statistics"),
           link: `/${activeLang}/statistics`,
         },
-        {
-          name: t("vacancies"),
-          link: `/${activeLang}/vacancies`,
-        },
-        {
-          name: t("contact"),
-          link: `/${activeLang}/communications`,
-        },
+        // {
+        //   name: t("vacancies"),
+        //   link: `/${activeLang}/vacancies`,
+        // },
         {
           name: t("citizen_appeal"),
           link: `/${activeLang}/citizen_appeal`,
@@ -49,6 +45,10 @@ export default function SubHeader() {
         {
           name: t("online_reception"),
           link: `/${activeLang}/online_reception`,
+        },
+        {
+          name: t("contact"),
+          link: `/${activeLang}/communications`,
         },
       ],
     },
