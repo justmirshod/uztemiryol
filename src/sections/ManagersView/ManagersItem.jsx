@@ -11,7 +11,7 @@ export default function ManagersItem({ manager, index }) {
       </div>
       <div className="flex flex-col col-span-5">
         <p className="text-gray-600 mb-2">{manager?.job}</p>
-        <p className="text-2xl font-semibold">{manager?.first_name}</p>
+        <p className="text-2xl font-semibold">{manager?.full_name}</p>
         <div
           className="mt-8 cursor-pointer max-w-[80%]"
           onClick={() => setOpen((prev) => !prev)}
