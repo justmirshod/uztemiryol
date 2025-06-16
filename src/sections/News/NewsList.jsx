@@ -2,9 +2,11 @@ import React from "react";
 import NewsListItem from "./NewsListItem";
 import { useSelector } from "react-redux";
 import Loader from "../../components/Loader/Loader";
+import { useLocation } from "react-router-dom";
 
 function NewsList() {
   const { blogs, loading } = useSelector((state) => state.blogs);
+  const { pathname } = useLocation();
 
   const renderNews = () => {
     if (loading) return <Loader />;
@@ -14,7 +16,15 @@ function NewsList() {
     });
   };
 
-  return <div className="grid grid-cols-2 gap-8">{renderNews()}</div>;
+  return (
+    <div
+      className={`grid ${
+        pathname?.includes("tenders") ? "grid-cols-1" : "grid-cols-2"
+      } gap-8`}
+    >
+      {renderNews()}
+    </div>
+  );
 }
 
 export default NewsList;

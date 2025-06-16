@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getSingleBlog } from "../../../api/blog";
 import { formatImgLink } from "../../../utils/format-image-link";
 import { formatDate } from "../../../utils/format-date";
 import Loader from "../../../components/Loader/Loader";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { Icon } from "@iconify/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -59,22 +60,49 @@ function SingleBlogView() {
         dangerouslySetInnerHTML={{ __html: singleBlog?.description }}
         className="text-[#666]"
       ></div>
-      <div className="h-[1px] bg-gray-400 my-4"></div>
 
-      <ul className="flex flex-col gap-2">
-        <li>
-          <strong>Boshlanish sanasi:</strong>
-          <span>{singleBlog?.start_date}</span>
-        </li>
-        <li className="my-2">
-          <strong>Tugash sanasi:</strong>
-          <span>{singleBlog?.dead_line}</span>
-        </li>
-        <li>
-          <strong>Boshlang'ich summa:</strong>
-          <span>{singleBlog?.start_price}</span>
-        </li>
-      </ul>
+      {pathname.includes("tenders") && (
+        <>
+          <div className="h-[1px] bg-gray-400 my-4"></div>
+
+          <ul className="flex flex-col gap-2">
+            <li>
+              <strong>Boshlanish sanasi:</strong>
+              <span> {formatDate(singleBlog?.start_date, "allNumber")}</span>
+            </li>
+            <li className="my-2">
+              <strong>Tugash sanasi:</strong>
+              <span> {singleBlog?.dead_line}</span>
+            </li>
+            <li>
+              <strong>Boshlang'ich summa:</strong>
+              <span> {singleBlog?.start_price}</span>
+            </li>
+            <li>
+              <strong>Status:</strong>
+              <span> {singleBlog?.active ? "Aktiv" : ""}</span>
+            </li>
+            <li>
+              <div className="flex items-center">
+                <strong>Tanlov hujjatlari: </strong>
+                <span className="inline-block ml-2">
+                  {" "}
+                  <a download href={singleBlog.document} target="__blank">
+                    <button className="bg-blue-100 py-2 w-[150px] inline-flex items-center justify-center">
+                      <Icon
+                        icon="material-symbols-light:download-rounded"
+                        width="24"
+                        height="24"
+                      />
+                      Yuklab olish
+                    </button>
+                  </a>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </>
+      )}
     </section>
   );
 }
