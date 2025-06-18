@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import "../index.css";
+import { fCurrency } from "../../../utils/formatNumber";
 
 function SingleBlogView() {
   const { id } = useParams();
@@ -72,15 +73,15 @@ function SingleBlogView() {
             </li>
             <li className="my-2">
               <strong>Tugash sanasi:</strong>
-              <span> {singleBlog?.dead_line}</span>
+              <span> {formatDate(singleBlog?.dead_line, "allNumber")}</span>
             </li>
             <li>
               <strong>Boshlang'ich summa:</strong>
-              <span> {singleBlog?.start_price}</span>
+              <span> {fCurrency(singleBlog?.start_price)} so'm</span>
             </li>
             <li>
               <strong>Status:</strong>
-              <span> {singleBlog?.active ? "Aktiv" : ""}</span>
+              <span> {singleBlog?.active ? "Aktiv" : "Aktiv emas"}</span>
             </li>
             <li>
               <div className="flex items-center">
