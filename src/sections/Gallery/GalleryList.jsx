@@ -6,14 +6,17 @@ import { formatImgLink } from "../../utils/format-image-link";
 function GalleryList() {
   const { gallery, galleryLoading } = useSelector((state) => state.blogs);
 
+  console.log(gallery);
+
   const renderGalleryPhotos = (images) => {
-    return images?.map((item) => {
+    const activeImages = images.filter((_, idx) => idx === 0);
+    return activeImages?.map((item) => (
       <img
         src={formatImgLink(item?.image)}
-        className="w-full h-[500px] object-cover"
+        className="w-full h-[300px] object-cover"
         alt=""
-      />;
-    });
+      />
+    ));
   };
 
   const renderGalleryItems = () => {
@@ -24,7 +27,7 @@ function GalleryList() {
       return (
         <div
           key={index}
-          className="gallery-item col-span-4 cursor-pointer overflow-hidden"
+          className="gallery-item cursor-pointer overflow-hidden"
         >
           <div className="img-box hover:scale-105 transition-all duration-300 ease-in">
             {renderGalleryPhotos(item?.images)}
@@ -35,7 +38,7 @@ function GalleryList() {
   };
   return (
     <>
-      <div className="gallery-list grid grid-cols-12 gap-6">
+      <div className="gallery-list grid grid-cols-4 gap-6">
         {renderGalleryItems()}
       </div>
     </>
