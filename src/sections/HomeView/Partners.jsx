@@ -8,10 +8,24 @@ import "swiper/css";
 
 export default function Partners() {
   return (
-    <div className="py-6 bg-white px-10">
+    <div className="py-6 bg-white px-4 md:px-10">
       <Swiper
-        spaceBetween={100}
-        slidesPerView={6}
+        spaceBetween={50}
+        slidesPerView={2}
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 60,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 80,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 100,
+          },
+        }}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         loop={true}
         modules={[Autoplay]}

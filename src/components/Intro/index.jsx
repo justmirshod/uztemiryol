@@ -66,7 +66,9 @@ function Intro({ bg, text }) {
   ];
 
   return (
-    <div className={`w-full ${isNotHome ? "h-[360px]" : ""}  relative`}>
+    <div
+      className={`w-full ${isNotHome ? "h-[200px] md:h-[360px]" : ""} relative`}
+    >
       <div className="w-full h-full">
         {/* <video src={vid1} width="100%" autoPlay muted loop /> */}
         <img
@@ -76,10 +78,12 @@ function Intro({ bg, text }) {
           className="w-full h-full object-cover object-center"
         />
         <div
-          className={`absolute w-full bg-[#052a9980]  z-10 h-full top-0 ${flex.alignCenter} text-white`}
+          className={`absolute w-full bg-[#052a9980] z-10 h-full top-0 ${flex.alignCenter} text-white`}
         >
           <Container>
-            <h1 className="text-[60px]">{text || "Temiryo'lekspress"}</h1>
+            <h1 className="text-2xl md:text-4xl lg:text-[60px] text-center">
+              {text || "Temiryo'lekspress"}
+            </h1>
           </Container>
         </div>
       </div>

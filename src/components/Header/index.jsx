@@ -16,6 +16,7 @@ import { Link, useLocation } from "react-router-dom";
 import UpHeader from "./UpHeader";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "../../router/hooks/use-router";
+import { useState, useEffect } from "react";
 
 //address links
 const addressLinks = [
@@ -59,60 +60,98 @@ export default function Header() {
   const { t, i18n } = useTranslation();
   const { pathname } = useLocation();
   const router = useRouter();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
       <UpHeader />
       <div
         id="main-header"
-        className=" sticky top-0 w-full bg-[#10223ecc] header-gradient py-4 z-[1200] shadow-2xl"
+        className="sticky top-0 w-full bg-[#10223ecc] header-gradient py-2 md:py-4 z-[1200] shadow-2xl"
       >
         <Container className="">
-          <div className={`${flex.alignCenter} justify-between`}>
-            <div className={`logo-part w-1/5 ${flex.alignCenter}`}>
-              <Link to="/" className={flex.alignCenter}>
-                <Logo className="w-[120px] cursor-pointer" />
-                <div className="ml-3">
-                  <h1 className="text-xl uppercase mb-1 font-medium text-white">
+          <div
+            className={`${flex.alignCenter} justify-between flex-col md:flex-row`}
+          >
+            {/* Logo and Company Info */}
+            <div
+              className={`logo-part w-full md:w-1/5 ${flex.alignCenter} justify-between md:justify-start mb-2 md:mb-0`}
+            >
+              <Link
+                to="/"
+                className={`${flex.alignCenter} flex-1 md:flex-none`}
+              >
+                <Logo className="w-[80px] md:w-[120px] cursor-pointer" />
+                <div className="ml-2 md:ml-3">
+                  <h1 className="text-lg md:text-xl uppercase mb-1 font-medium text-white">
                     {t("company.name")}
                   </h1>
-                  <p className="uppercase text-sm font-medium text-white">
+                  <p className="uppercase text-xs md:text-sm font-medium text-white">
                     {t("company.extension")}
                   </p>
                 </div>
               </Link>
-            </div>
-            <div className={`main-part w-[70%]`}>
-              <div
-                className={`${flex.alignCenter} justify-between pb-4 border-b`}
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden text-white p-2"
               >
-                <div className={`address-part ${flex.alignCenter}`}>
+                <i
+                  className={`fa-solid ${
+                    isMobileMenuOpen ? "fa-times" : "fa-bars"
+                  } text-xl`}
+                ></i>
+              </button>
+            </div>
+
+            {/* Desktop Main Content */}
+            <div className={`main-part w-full md:w-[70%] hidden md:block`}>
+              <div
+                className={`${flex.alignCenter} justify-between pb-4 border-b flex-col md:flex-row`}
+              >
+                <div
+                  className={`address-part ${flex.alignCenter} flex-wrap justify-center md:justify-start mb-2 md:mb-0`}
+                >
                   {addressLinks?.map((item, index) => (
-                    <div className={`${flex.alignCenter} mr-4`} key={index}>
-                      <i className={`${item?.icon} text-white text-5`}></i>
-                      <span className="ml-1 text-white text-sm">
+                    <div
+                      className={`${flex.alignCenter} mr-2 md:mr-4 mb-1 md:mb-0`}
+                      key={index}
+                    >
+                      <i
+                        className={`${item?.icon} text-white text-xs md:text-sm`}
+                      ></i>
+                      <span className="ml-1 text-white text-xs md:text-sm">
                         {item?.title}
                       </span>
                     </div>
                   ))}
                 </div>
-                <div className={`social-media-apps ${flex.alignCenter}`}>
+                <div
+                  className={`social-media-apps ${flex.alignCenter} justify-center md:justify-end`}
+                >
                   {mediaLinks?.map((media, index) => (
-                    <a href={media.link} target="_blank">
+                    <a href={media.link} target="_blank" key={index}>
                       <img
                         src={media.icon}
-                        width="30px"
-                        height="30px"
-                        className="mr-4"
-                        key={index}
+                        width="25px"
+                        height="25px"
+                        className="mr-2 md:mr-4"
                       />
                     </a>
                   ))}
                 </div>
-                <div className={`search-and-langs ${flex.alignCenter}`}>
+                <div
+                  className={`search-and-langs ${flex.alignCenter} justify-center md:justify-end mt-2 md:mt-0`}
+                >
                   {siteLangs.map((lang, index) => (
                     <span
-                      className="uppercase font-semibold mr-2 text-white cursor-pointer"
+                      className="uppercase font-semibold mr-2 text-white cursor-pointer text-sm"
                       onClick={() => {
                         i18n.changeLanguage(lang);
                         const routeWithoutLang = pathname.split("/");
@@ -129,6 +168,67 @@ export default function Header() {
                 </div>
               </div>
               <SubHeader />
+            </div>
+
+            {/* Mobile Menu */}
+            <div
+              className={`w-full md:hidden ${
+                isMobileMenuOpen ? "block" : "hidden"
+              }`}
+            >
+              <div className="bg-[#10223e] rounded-lg mt-2 p-4">
+                {/* Mobile Address Links */}
+                <div className="mb-4">
+                  {addressLinks?.map((item, index) => (
+                    <div className={`${flex.alignCenter} mb-2`} key={index}>
+                      <i
+                        className={`${item?.icon} text-white text-sm mr-2`}
+                      ></i>
+                      <span className="text-white text-sm">{item?.title}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Mobile Social Media */}
+                <div className={`${flex.alignCenter} justify-center mb-4`}>
+                  {mediaLinks?.map((media, index) => (
+                    <a href={media.link} target="_blank" key={index}>
+                      <img
+                        src={media.icon}
+                        width="30px"
+                        height="30px"
+                        className="mr-4"
+                      />
+                    </a>
+                  ))}
+                </div>
+
+                {/* Mobile Language Switcher */}
+                <div className={`${flex.alignCenter} justify-center mb-4`}>
+                  {siteLangs.map((lang, index) => (
+                    <span
+                      className="uppercase font-semibold mr-4 text-white cursor-pointer"
+                      onClick={() => {
+                        i18n.changeLanguage(lang);
+                        const routeWithoutLang = pathname.split("/");
+                        routeWithoutLang.splice(1, 1, lang);
+                        const newRoute = routeWithoutLang.join("/");
+                        router.replace(newRoute);
+                        router.reload();
+                        setIsMobileMenuOpen(false);
+                      }}
+                      key={index}
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Mobile Navigation */}
+                <div className="border-t pt-4">
+                  <SubHeader onNavigate={() => setIsMobileMenuOpen(false)} />
+                </div>
+              </div>
             </div>
           </div>
         </Container>

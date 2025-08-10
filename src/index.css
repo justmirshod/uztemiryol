@@ -19,3 +19,68 @@ li {
   margin: 0 !important;
   list-style-type: none !important;
 }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Mobile-first responsive text */
+.text-responsive {
+  font-size: 0.875rem; /* 14px */
+}
+
+@media (min-width: 640px) {
+  .text-responsive {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+/* Responsive spacing */
+.space-responsive {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .space-responsive {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .space-responsive {
+    padding: 2rem;
+  }
+}
+
+/* Mobile menu animations */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.mobile-menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}

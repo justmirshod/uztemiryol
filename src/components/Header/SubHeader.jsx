@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const activeLang = localStorage.getItem("i18nextLng") || "uz";
 
-export default function SubHeader() {
+export default function SubHeader({ onNavigate }) {
   const { t } = useTranslation();
 
   const siteRoutes = [
@@ -180,12 +180,17 @@ export default function SubHeader() {
       ],
     },
   ];
+
   return (
-    <div className={`${flex.alignCenter} justify-between mt-4 py-1`}>
+    <div
+      className={`${flex.alignCenter} justify-between mt-4 py-1 flex-col md:flex-row`}
+    >
       <Logo className="hidden w-[53px] h-[96px]" />
-      {siteRoutes.map((route, index) => (
-        <SubHeaderItem route={route} key={index} />
-      ))}
+      <div className="flex flex-col md:flex-row gap-2 md:gap-0 w-full md:w-auto">
+        {siteRoutes.map((route, index) => (
+          <SubHeaderItem route={route} key={index} onNavigate={onNavigate} />
+        ))}
+      </div>
     </div>
   );
 }
