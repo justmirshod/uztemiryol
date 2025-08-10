@@ -186,7 +186,7 @@ export default function SubHeader({ onNavigate }) {
       className={`${flex.alignCenter} justify-between mt-4 py-1 flex-col lg:flex-row`}
     >
       <Logo className="hidden w-[53px] h-[96px]" />
-      <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 w-full lg:w-auto lg:flex-wrap">
+      <div className="flex flex-col lg:flex-row gap-2 lg:gap-4 w-full lg:w-auto">
         {siteRoutes.map((route, index) => (
           <SubHeaderItem route={route} key={index} onNavigate={onNavigate} />
         ))}

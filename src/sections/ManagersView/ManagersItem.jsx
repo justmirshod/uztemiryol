@@ -100,7 +100,7 @@ export default function ManagersItem({ manager, index }) {
 
         {/* Action Buttons */}
         <div className="flex gap-3 mt-6 pt-6 border-t border-gray-100">
-          <button className="flex-1 bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+          <button className="flex-1 bg-blue-600 text-white  md:py-3 md:px-4 rounded-lg hover:bg-blue-700 transition-colors font-medium">
             <i className="fas fa-phone mr-2"></i>
             {t("call") || "Qo'ng'iroq"}
           </button>

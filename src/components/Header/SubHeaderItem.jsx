@@ -18,14 +18,14 @@ export default function SubHeaderItem({ route, onNavigate }) {
       {route.link ? (
         <Link
           to={route.link}
-          className="text-white cursor-pointer text-sm lg:text-base block py-2 lg:py-0 text-center lg:text-left hover:text-gray-300 transition-colors whitespace-nowrap"
+          className="text-white cursor-pointer text-sm lg:text-base block py-2 lg:py-0 text-center lg:text-left hover:text-gray-300 transition-colors whitespace-nowrap lg:px-2"
           onClick={handleLinkClick}
         >
           {route.title}
         </Link>
       ) : (
         <button
-          className="text-white cursor-pointer text-sm lg:text-base block py-2 lg:py-0 text-center lg:text-left w-full hover:text-gray-300 transition-colors whitespace-nowrap"
+          className="text-white cursor-pointer text-sm lg:text-base block py-2 lg:py-0 text-center lg:text-left w-full hover:text-gray-300 transition-colors whitespace-nowrap lg:px-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {route.title}

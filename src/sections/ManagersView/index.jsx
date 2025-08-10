@@ -34,10 +34,10 @@ export default function ManagersView() {
           <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
             {t("managers")}
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          {/* <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t("managers_description") ||
               "Meet our experienced leadership team dedicated to advancing railway transportation in Uzbekistan"}
-          </p>
+          </p> */}
         </div>
 
         {/* Managers Grid */}
