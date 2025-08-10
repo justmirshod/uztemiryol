@@ -76,31 +76,31 @@ export default function Header() {
       >
         <Container className="">
           <div
-            className={`${flex.alignCenter} justify-between flex-col md:flex-row`}
+            className={`${flex.alignCenter} justify-between flex-col lg:flex-row`}
           >
             {/* Logo and Company Info */}
             <div
-              className={`logo-part w-full md:w-1/5 ${flex.alignCenter} justify-between md:justify-start mb-2 md:mb-0`}
+              className={`logo-part w-full ${flex.alignCenter} justify-between lg:justify-start mb-2 lg:mb-0`}
             >
               <Link
                 to="/"
-                className={`${flex.alignCenter} flex-1 md:flex-none`}
+                className={`${flex.alignCenter} flex-1 lg:flex-none`}
               >
-                <Logo className="w-[80px] md:w-[120px] cursor-pointer" />
-                <div className="ml-2 md:ml-3">
-                  <h1 className="text-lg md:text-xl uppercase mb-1 font-medium text-white">
+                <Logo className="w-[80px] lg:w-[120px] cursor-pointer" />
+                <div className="ml-2 lg:ml-3">
+                  <h1 className="text-lg lg:text-xl uppercase mb-1 font-medium text-white">
                     {t("company.name")}
                   </h1>
-                  <p className="uppercase text-xs md:text-sm font-medium text-white">
+                  <p className="uppercase text-xs lg:text-sm font-medium text-white">
                     {t("company.extension")}
                   </p>
                 </div>
               </Link>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile/Tablet Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-white p-2"
+                className="lg:hidden text-white p-2"
               >
                 <i
                   className={`fa-solid ${
@@ -111,29 +111,29 @@ export default function Header() {
             </div>
 
             {/* Desktop Main Content */}
-            <div className={`main-part w-full md:w-[70%] hidden md:block`}>
+            <div className={`main-part w-full lg:w-[70%] hidden lg:block`}>
               <div
-                className={`${flex.alignCenter} justify-between pb-4 border-b flex-col md:flex-row`}
+                className={`${flex.alignCenter} justify-between pb-4 border-b flex-col lg:flex-row`}
               >
                 <div
-                  className={`address-part ${flex.alignCenter} flex-wrap justify-center md:justify-start mb-2 md:mb-0`}
+                  className={`address-part ${flex.alignCenter} flex-wrap justify-center lg:justify-start mb-2 lg:mb-0`}
                 >
                   {addressLinks?.map((item, index) => (
                     <div
-                      className={`${flex.alignCenter} mr-2 md:mr-4 mb-1 md:mb-0`}
+                      className={`${flex.alignCenter} mr-2 lg:mr-4 mb-1 lg:mb-0`}
                       key={index}
                     >
                       <i
-                        className={`${item?.icon} text-white text-xs md:text-sm`}
+                        className={`${item?.icon} text-white text-xs lg:text-sm`}
                       ></i>
-                      <span className="ml-1 text-white text-xs md:text-sm">
+                      <span className="ml-1 text-white text-xs lg:text-sm">
                         {item?.title}
                       </span>
                     </div>
                   ))}
                 </div>
                 <div
-                  className={`social-media-apps ${flex.alignCenter} justify-center md:justify-end`}
+                  className={`social-media-apps ${flex.alignCenter} justify-center lg:justify-end`}
                 >
                   {mediaLinks?.map((media, index) => (
                     <a href={media.link} target="_blank" key={index}>
@@ -141,13 +141,13 @@ export default function Header() {
                         src={media.icon}
                         width="25px"
                         height="25px"
-                        className="mr-2 md:mr-4"
+                        className="mr-2 lg:mr-4"
                       />
                     </a>
                   ))}
                 </div>
                 <div
-                  className={`search-and-langs ${flex.alignCenter} justify-center md:justify-end mt-2 md:mt-0`}
+                  className={`search-and-langs ${flex.alignCenter} justify-center lg:justify-end mt-2 lg:mt-0`}
                 >
                   {siteLangs.map((lang, index) => (
                     <span
@@ -170,9 +170,9 @@ export default function Header() {
               <SubHeader />
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile/Tablet Menu */}
             <div
-              className={`w-full md:hidden ${
+              className={`w-full lg:hidden ${
                 isMobileMenuOpen ? "block" : "hidden"
               }`}
             >

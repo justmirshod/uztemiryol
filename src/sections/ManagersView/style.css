@@ -1,16 +1,68 @@
-.custom-height{
-  height: 300px !important;
+/* Modern Card Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.border-box{
-  box-sizing: border-box !important;
+/* Card Hover Effects */
+.manager-card {
+  transition: all 0.3s ease;
 }
 
-.child{
-  height: 0;
-  overflow: auto;
+.manager-card:hover {
+  transform: translateY(-5px);
 }
 
-.parent:hover > .child {
-  height: fit-content;
+/* Image Hover Effect */
+.manager-image {
+  transition: transform 0.3s ease;
+}
+
+.manager-card:hover .manager-image {
+  transform: scale(1.05);
+}
+
+/* Smooth Expand/Collapse Animation */
+.biography-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 768px) {
+  .manager-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .manager-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .manager-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
