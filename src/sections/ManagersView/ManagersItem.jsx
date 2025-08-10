@@ -15,7 +15,7 @@ export default function ManagersItem({ manager, index }) {
     >
       {/* Card Header with Image */}
       <div className="relative">
-        <div className="h-64 md:h-72 overflow-hidden">
+        <div className="h-64 md:h-96 overflow-hidden">
           <img
             src={manager?.image || "/default-manager.jpg"}
             alt={manager?.full_name}
