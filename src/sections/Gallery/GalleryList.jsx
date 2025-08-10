@@ -3,11 +3,9 @@ import { useSelector } from "react-redux";
 import Loader from "../../components/Loader/Loader";
 import { formatImgLink } from "../../utils/format-image-link";
 
-function GalleryList() {
+function GalleryList({ page }) {
   const { gallery, galleryLoading } = useSelector((state) => state.blogs);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-
-  console.log(gallery);
 
   const renderGalleryPhotos = (images) => {
     const activeImages = images.filter((_, idx) => idx === 0);
@@ -27,7 +25,7 @@ function GalleryList() {
   };
 
   const renderGalleryItems = () => {
-    if (galleryLoading) return <Loader />;
+    if (galleryLoading && !gallery?.results?.length) return <Loader />;
     if (!gallery?.results?.length)
       return <h1 className="text-center">Hech narsa topilmadi</h1>;
     return gallery?.results?.map((item, index) => {
